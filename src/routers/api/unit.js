@@ -1,13 +1,18 @@
 /**
  * author:yuxiaochen@lifang.com
- * desc:子小区相关路由设定
+ * desc:单元相关api定义
  */
 
 import express from "express";
-import logger from '../../utils/logger';
-import routerUtil from "../../utils/router";
+import Logger from '../../utils/logger';
 import proxyFactory from '../../core/proxyFactory';
 
-let router = express.Router();
 
-module.exports=router;
+let router = express.Router();
+let unitPxy = proxyFactory.createPxy("unit");
+
+
+module.exports = router;
+
+
+

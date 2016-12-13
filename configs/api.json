@@ -6,39 +6,18 @@
         "prod": "http://soa.express.me"
     },
     "prefix": "api",
-    "audit": {
-        "list": "groupBuyingAudit/list.action",
-        "details": "groupBuyingAudit/detail.action",
-        "audit": "groupBuyingAudit/audit.action"
+    "estate": {
+        "list": "estateSubEdit/getEstateSubEditListByCondition.do"
     },
     "common": {
         "wksso": "user/getCurrentUser.action",
         "user": "user/getCurrentUser.action",
-        "area": "getCityListByUser.action"
+        "area": "common/getCityAll"
     },
-    "customerReceivables": {
-        "list": "consumerReceivables/getConsumerReceivablesList.action",
-        "details": "consumerReceivables/getConsumerReceivablesDetails.action",
-        "export": "consumerReceivables/exportConsumerReceivablesList.action"
+    "subestate": {
+        "list": ""
     },
-    "signedReceivables": {
-        "list": "contractReceivables/getPleaseCommissionOrderList.action",
-        "details": "contractReceivables/getPleaseCommissionOrderDetails.action",
-        "cancel": "contractReceivables/cancelReceivables.action",
-        "save": "contractReceivables/saveReceivables.action"
-    },
-    "grouponFee": {
-        "list": "certificateManagement/groupBuying/list.action"
-    },
-    "serviceFee": {
-        "list": "groupPurchaseTransferServerFee/list.action"
-    },
-    "serviceFeeOrder": {
-        "list": "serverFeeBilling/list.action"
-    },
-    "voucher": {
-        "list": "certificateManagement/generate.action",
-        "details": "certificateManagement/detail.action",
-        "uploadVouchers": "certificateManagement/confirmupload.action"
+    "unit": {
+        "list": ""
     }
 }

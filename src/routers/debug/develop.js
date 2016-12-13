@@ -12,6 +12,7 @@ import request from 'request-promise';
 import sslReader from '../../utils/sslReader';
 
 let router = express.Router();
+let port = process.env.PORT;
 
 router.get('/login', (req, res, next) => {
     let param = {
@@ -28,9 +29,10 @@ router.post('/login', async (req, res, next) => {
     let reqData = req.body;
     let loginUrl = reqData.url;
     if (reqData.mock == "true") {
-        global.mock = true
+        global.apiDomain = `http://localhost:${port}/mock`;
     } else {
-        global.mock = false
+
+        global.apiDomain = `${loginUrl}/${apiConfs.prefix}`
     }
     let j = request.jar();
     //非生产环境需要带上自签发的ca证书
@@ -70,15 +72,17 @@ router.post('/login', async (req, res, next) => {
     };
     let login = await request.post(options)
     let loginedCookies = j.getCookies(options.url);
-
+    let success = false;
     if (loginedCookies) {
         for (let c of loginedCookies) {
             let {key, value} = c;
+            if (key == "CASTGC") success = true;
             res.clearCookie(key, { path: '/' });
             res.cookie(key, value, { "path": "/", "httpOnly": true, "hostOnly": true });
         }
     }
-    return res.json({ status: 1, message: "", data: null });
+
+    return res.json({ status: success ? 1 : 0, message: success ? "" : "登录失败", data: null });
 });
 
 

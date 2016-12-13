@@ -6,7 +6,7 @@
         "prod": "//cdn01.wkzf.com"
     },
     "util": "/fe_public_library",
-    "app": "/financial2_fe",
+    "app": "/bdm2_fe",
     "pluginCss": {
         "wktable": [
             "/wkzf/js/util/jQuery.wktable/wktable.min.css"
@@ -28,6 +28,9 @@
         ]
     },
     "pluginJs": {
+        "wktable": [
+            "/wkzf/js/util/jQuery.wktable/jquery.wktable.min.js"
+        ],
         "select2": [
             "/wkzf/js/util/select2/4.0.1/dist/js/select2.min.js",
             "/wkzf/js/util/select2/4.0.1/dist/js/i18n/zh-CN.js"

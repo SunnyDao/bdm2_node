@@ -16,7 +16,7 @@ import whiteList from "../../configs/whiteList.json";
  * 进入命令行，set STAGE_ENV=dev 这样就将STAGE_ENV设置成了dev，可以有如下值：dev | test | sim | prod
  */
 let env = process.env.STAGE_ENV;
-let port = process.env.PORT;
+
 /**
  * desc:创建config配置的类
  */
@@ -37,9 +37,7 @@ class Config {
      * @param  {} key
      */
     static getApi(name, key) {
-        //mock为global变量,在触发develop/login的时候设置,如果为true则调用本地mock数据的api,如果为false则调用后段server的api
-        if (global.mock) return `http://localhost:${port}/mock/${apiConfs[name][key]}`;
-        return `${apiConfs["domain"][env]}/${apiConfs["prefix"]}/${apiConfs[name][key]}`;
+        return `${global.apiDomain}/${apiConfs[name][key]}`;
     }
 
     /**

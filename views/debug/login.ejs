@@ -57,8 +57,12 @@
             url: '/develop/login',
             type: 'post',
             data: {"env":env,"username":username,"password":password,"url":url,"mock":mock},
-            success:function(){
-                alert("登录成功");
+            success:function(data){
+                if(data.status == 1){
+                    alert("登录成功");
+                }else{
+                    alert("登录失败");
+                }
             }
         });
     })

@@ -6,7 +6,7 @@
 
 import SOAFactory from '../core/soafactory';
 
-let financialSOA = SOAFactory.createSOA("financialSOA"); //法务系统SOA类
+let bdmSOA = SOAFactory.createSOA("bdmSOA"); 
 
 class Common {
     constructor() {
@@ -39,7 +39,7 @@ class Common {
                 converter: { mapperName: "area", mapperFunc: "list" }
             }
         }
-        return await financialSOA.request(this.options);
+        return await bdmSOA.request(this.options);
     }
 
     /**
@@ -61,25 +61,9 @@ class Common {
             }
         }
 
-        return await financialSOA.request(this.options);
+        return await bdmSOA.request(this.options);
     }
 
-    /**
-     * desc:获取职位
-     * @param  {Object} {cookies}
-     */
-    async getPosition({cookies}) {
-        this.options = {
-            data: { cookies },
-            soaOpt: {
-                moduleName: this.name,
-                actionName: "position",
-                converter: false,
-                method: "post"
-            }
-        }
-        return await financialSOA.request(this.options);
-    }
 }
 
 export default Common;

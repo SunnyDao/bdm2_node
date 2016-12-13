@@ -1,10 +1,10 @@
 /**
  * author:yuxiaochen@lifang.com
- * desc:客户应收款map配置类
+ * desc:小区相关map配置类
  */
 
 import objectMapper from "object-mapper";
-import mapperTransform from "./mapperTransform";
+import mapperTransform from "./common";
 import Logger from '../utils/logger';
 
 let customerItemMapper = {
@@ -75,21 +75,10 @@ let detailsMap={
     }
 };
 
-class customerReceivables {
+class Estate {
     constructor() { }
 
-    /**
-     * @param  {} src
-     */
-    static details(src) {
-        try {
-            return objectMapper(src,detailsMap);
-        } catch (error) {
-            Logger.error(`customerReceivables Mapper==>detail:${error},src:${JSON.stringify(src)}`);
-            return null;
-        }
-    }
-
+   
     /**
      * @param  {} src
      */
@@ -103,4 +92,4 @@ class customerReceivables {
     }
 }
 
-export default customerReceivables;
+export default Estate;

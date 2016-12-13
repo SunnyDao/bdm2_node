@@ -1,13 +1,16 @@
 /**
  * author:yuxiaochen@lifang.com
- * desc:子小区相关路由设定
+ * desc:单元相关路由定义
  */
 
 import express from "express";
 import logger from '../../utils/logger';
 import routerUtil from "../../utils/router";
-import proxyFactory from '../../core/proxyFactory';
+import proxyFactory from '../../core/proxyfactory';
+
 
 let router = express.Router();
 
-module.exports=router;
+
+
+module.exports = router;
