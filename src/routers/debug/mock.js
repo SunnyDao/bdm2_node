@@ -26,6 +26,24 @@ router.post("/estateSubEdit/getEstateSubEditListByCondition.do", (req, res, next
     return res.json(pos);
 })
 
+//获取审核详细信息
+router.post("/estateSubEdit/getEstateSubEditDetail.do", (req, res, next) => {
+    let pos = require("../../../json/estateAuditDetails.json");
+    return res.json(pos);
+})
+
+//审核通过
+router.post("/estateSubEdit/pushEstateSub.do", (req, res, next) => {
+    let pos = require("../../../json/estatePass.json");
+    return res.json(pos);
+})
+
+//审核拒绝
+router.post("/estateSubEdit/dotPass.do", (req, res, next) => {
+    let pos = require("../../../json/estatePass.json");
+    return res.json(pos);
+})
+
 /**
  * ================================================小区列表Mock接口 End====================================================
  */

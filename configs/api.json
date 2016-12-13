@@ -7,7 +7,10 @@
     },
     "prefix": "api",
     "estate": {
-        "list": "estateSubEdit/getEstateSubEditListByCondition.do"
+        "list": "estateSubEdit/getEstateSubEditListByCondition.do",
+        "details":"estateSubEdit/getEstateSubEditDetail.do",
+        "pass":"estateSubEdit/pushEstateSub.do",
+        "reject":"estateSubEdit/dotPass.do"
     },
     "common": {
         "wksso": "user/getCurrentUser.action",

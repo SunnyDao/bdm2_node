@@ -26,6 +26,47 @@ router.get("/getList", async (req, res, next) => {
 })
 
 
+/**
+ * 获取小区子划分审核详情信息
+ */
+router.get("/getDetails", async (req, res, next) => {
+    try {
+        //调用proxy获取数据
+        let result = await estatePxy.getDetails(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('estate Api==>getDetails:' + e);
+        next(e);
+    }
+})
+
+/**
+ * 通过
+ */
+router.post("/pass", async (req, res, next) => {
+    try {
+        let result = await estatePxy.pass(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('estate Api==>pass:' + e);
+        next(e);
+    }
+});
+
+/**
+ * 拒绝
+ */
+router.post("/reject", async (req, res, next) => {
+    try {
+        let result = await estatePxy.reject(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('estate Api==>reject:' + e);
+        next(e);
+    }
+})
+
+
 module.exports = router;
 
 
