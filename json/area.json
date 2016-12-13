@@ -1,0 +1,115 @@
+{
+    "status": 1,
+    "message": "",
+    "data": [
+        {
+            "id": 3,
+            "text": "北京市"
+        },
+        {
+            "id": 3111,
+            "text": "东城区",
+            "pid": 3
+        },
+        {
+            "id": 32211,
+            "text": "天安门板块",
+            "pid": 3111
+        },
+        {
+            "id": 43,
+            "text": "上海市",
+            "nodes": null
+        },
+        {
+            "id": 64,
+            "text": "重庆市",
+            "nodes": null
+        },
+        {
+            "id": 126,
+            "text": "石家庄市",
+            "nodes": null
+        },
+        {
+            "id": 741,
+            "text": "南京市",
+            "nodes": null
+        },
+        {
+            "id": 764,
+            "text": "镇江市",
+            "nodes": null
+        },
+        {
+            "id": 771,
+            "text": "苏州市",
+            "nodes": null
+        },
+        {
+            "id": 901,
+            "text": "宁波市",
+            "nodes": null
+        },
+        {
+            "id": 1481,
+            "text": "新乡市",
+            "nodes": null
+        },
+        {
+            "id": 1581,
+            "text": "濮阳市",
+            "nodes": null
+        },
+        {
+            "id": 1746,
+            "text": "长沙市",
+            "nodes": null
+        },
+        {
+            "id": 1873,
+            "text": "广州市",
+            "nodes": null
+        },
+        {
+            "id": 1950,
+            "text": "深圳市",
+            "nodes": null
+        },
+        {
+            "id": 106,
+            "text": "邯郸市",
+            "nodes": null
+        },
+        {
+            "id": 176,
+            "text": "张家口市",
+            "nodes": null
+        },
+        {
+            "id": 194,
+            "text": "承德市",
+            "nodes": null
+        },
+        {
+            "id": 206,
+            "text": "唐山市",
+            "nodes": null
+        },
+        {
+            "id": 221,
+            "text": "廊坊市",
+            "nodes": null
+        },
+        {
+            "id": 847,
+            "text": "泰州市",
+            "nodes": null
+        },
+        {
+            "id": 1020,
+            "text": "黄山市",
+            "nodes": null
+        }
+    ]
+}

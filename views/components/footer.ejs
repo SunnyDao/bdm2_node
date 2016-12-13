@@ -1,0 +1,8 @@
+        <!--页面脚本区域-->
+        <script src="<%= appStaticPrefix %>/js/app.min.js?v=<%= version %>"></script>
+        <% extraJavascripts.forEach(function(extraJavascript){ %>
+        <script src="<%= extraJavascript %>?v=<%= version %>"></script>
+        <% }) ; %>             
+        <% if(matchJavascript) { %><script data-main="<%= appStaticPrefix %>/js/<%= matchJavascript %>.min.js?v=<%= version %>" src="<%= utilStaticPrefix %>/wkzf/js/require.min.js"></script><% } %>
+    </body>
+</html>

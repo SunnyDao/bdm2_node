@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= title %> - 后台管理系统</title>
+        <meta name="keywords" content="">
+        <meta name="description" content=""> 
+        <!-- 引入stylesheet资源 -->
+        
+        <link rel="stylesheet" href="<%= utilStaticPrefix %>/bootstrap/3.3.4/css/bootstrap.min.css %>">
+        <link rel="stylesheet" href="<%= appStaticPrefix %>/css/app.min.css?v=<%= version %>">
+        <%  extraStylesheets.forEach(function(extraStylesheet){ %>
+        <link rel="stylesheet" href="<%= extraStylesheet %>?v=<%= version %>">
+        <% }) ; %>      
+        <% if(matchStylesheet) { %><link rel="stylesheet" href="<%= appStaticPrefix %>/css/<%= matchStylesheet %>.min.css?v=<%= version %>"><% } %>
+    </head>
+    <body>
+  

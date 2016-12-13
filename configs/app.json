@@ -1,0 +1,33 @@
+{
+    "version": "1.0",
+    "fsDomain": "http://fs.express.me",
+    "uploadDir": "../fs.express.me",
+    "session": {
+        "secret": "wkzf",
+        "timeout": "1800",
+        "prefix": "bdm_sess:"
+    },
+    "SOA": {
+        "timeout": 60000,
+        "successCode": 1,
+        "sessionExpireCode": 1502,
+        "ssl": [
+            "ca.crt"
+        ]
+    },
+    "middleware": {
+        "global": [
+            "session",
+            "logger",
+            "createParams"
+        ],
+        "api": [
+            "crossDomain"
+        ],
+        "render": [
+            "createWksso",
+            "userContext"
+        ]
+    },
+    "crossDomain": false
+}

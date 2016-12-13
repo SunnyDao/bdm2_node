@@ -1,0 +1,65 @@
+<%- include("../components/head") %>
+
+<div style="margin:20px auto;text-align:center;width:800px;">
+    <p>为了便于在本地环境调试新筋斗云JAVA接口，你可以通过此页面登录非生产环境的筋斗云系统</p>
+</div>
+
+<form class="form-horizontal" role="form"  style="margin:50px;">
+    <div class="form-group">
+        <label for="url" class="col-sm-3 control-label">登录地址</label>
+        <div class="col-sm-5">
+        <select name="url" id="url" class="form-control">
+            <option value="https://yun2.dev.wkzf">https://yun2.dev.wkzf</option>
+            <option value="https://yun2.test.wkzf">https://yun2.test.wkzf</option>
+            <option value="https://yun2.sim.wkzf">https://yun2.sim.wkzf</option>
+        </select>
+        </div>
+    </div>
+    <div class="form-group">
+     <label for="mock" class="col-sm-3 control-label">mock数据</label>
+        <div class="col-sm-5">
+        <select name="mock" id="mock" class="form-control">
+            <option value="true">是</option>
+            <option value="false">否</option>
+        </select>
+        </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="username" class="col-sm-3 control-label">用户名</label>
+        <div class="col-sm-5">
+            <input type="text" name="username" class="form-control" id="username" placeholder="用户名称">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="col-sm-3 control-label">密码</label>
+        <div class="col-sm-5">
+            <input type="text" name="password" class="form-control" id="password" placeholder="密码">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="button" class="btn btn-primary">登录</button>
+        </div>
+    </div>
+</form>
+   
+
+<%- include("../components/footer") %>
+<script>
+    $(".btn-primary").on("click",function(){
+        var env=$.trim($("#env").val());
+        var username=$.trim($("#username").val());
+        var password=$.trim($("#password").val());
+        var mock=$.trim($("#mock").val());
+        var url=$.trim($("#url").val());
+        $.ajax({
+            url: '/develop/login',
+            type: 'post',
+            data: {"env":env,"username":username,"password":password,"url":url,"mock":mock},
+            success:function(){
+                alert("登录成功");
+            }
+        });
+    })
+</script>
