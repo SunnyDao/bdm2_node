@@ -4,9 +4,9 @@
  */
 
 
-import SOAFactory from '../core/soafactory';
+import ModuleFactory from '../core/factory';
 
-let bdmSOA = SOAFactory.createSOA("bdmSOA");
+let bdmService = ModuleFactory.createService("bdmSOA"); 
 
 class SubEstate {
     constructor() {

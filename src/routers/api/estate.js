@@ -5,11 +5,10 @@
 
 import express from "express";
 import Logger from '../../utils/logger';
-import proxyFactory from '../../core/proxyFactory';
-
+import ModuleFactory from '../../core/factory';
 
 let router = express.Router();
-let estatePxy = proxyFactory.createPxy("estate");
+let estatePxy = ModuleFactory.createProxy("estate");
 
 /**
  * 获取小区子划分列表
