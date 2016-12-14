@@ -21,6 +21,9 @@
         "list": "",
         "roomList":"houseRoom/list.do"
     },
+    "subEstateImg":{
+        
+    },
     "unit": {
         "list": ""
     }
