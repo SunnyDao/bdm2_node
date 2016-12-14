@@ -44,6 +44,50 @@ router.post("/estateSubEdit/dotPass.do", (req, res, next) => {
     return res.json(pos);
 })
 
+//小区子划分接口
+router.post("/estate/subEstate/list.do",(req,res,next)=>{
+    
+    let pos = require("../../../json/subEstateList.json");
+    return res.json(pos);
+});
+
+//小区子划分标记
+router.get("/estate/getSubestateComparePage.do",(req,res,next)=>{
+    let pos = require("../../../json/subEstateMark.json");
+    console.log("hahahah----");
+    return res.json(pos);
+});
+
+//小区子划分标记
+router.get("/dataprocess/perfectedHistory.do",(req,res,next)=>{
+    let pos = require("../../../json/subEstateMark.json");
+    return res.json(pos);
+});
+
+//获取城市
+router.get("/common/getCity.do",(req,res,next)=>{
+    let pos = require("../../../json/getCities.json");
+    return res.json(pos);
+});
+
+//获取区域
+router.get("/common/list/simple.do",(req,res,next)=>{
+    let pos = require("../../../json/getDistricts.json");
+    return res.json(pos);
+});
+
+//获取板块
+router.get("/common/townList.do",(req,res,next)=>{
+    let pos = require("../../../json/getTowns.json");
+    return res.json(pos);
+});
+
+//获取小区
+router.get("/common/getEstateInfoByTownId.do",(req,res,next)=>{
+    let pos = require("../../../json/getEstates.json");
+    return res.json(pos);
+});
+
 /**
  * ================================================小区列表Mock接口 End====================================================
  */

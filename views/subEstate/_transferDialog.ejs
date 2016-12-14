@@ -1,0 +1,58 @@
+
+	<div class="modal-header">
+		<button class="close" data-dismiss="modal">&times;</button>
+		<h4 class="modal-title">小区转移</h4>
+	</div>
+	<div class="modal-body">
+		<form action="/dataprocess/mergeSubCascade.do" class="validate">
+		<div class="row">
+			<div class="col-xs-12">请选择转入小区信息：</div>	
+			<input type="hidden" name="id" id="subEstateIds" />		
+		</div><br/>
+		<div class="row">
+			<div class="col-xs-offset-2 col-xs-2">
+				所属城市<span class="text-danger">*</span>
+			</div>
+			<div class="col-xs-6">
+				<select class="form-control" name="cityId" data-validation-engine="validate[required]">
+					
+				</select>
+			</div>
+		</div><br/>
+		<div class="row">
+			<div class="col-xs-offset-2 col-xs-2">
+				所属区域<span class="text-danger">*</span>
+			</div>
+			<div class="col-xs-6">
+				<select class="form-control" name="districtId" data-validation-engine="validate[required]">
+					
+				</select>
+			</div>
+		</div><br/>
+		<div class="row">
+			<div class="col-xs-offset-2 col-xs-2">
+				所属板块<span class="text-danger">*</span>
+			</div>
+			<div class="col-xs-6">
+				<select class="form-control" name="townId" data-validation-engine="validate[required]">
+					
+				</select>
+			</div>
+		</div><br/>
+		<div class="row">
+			<div class="col-xs-offset-2 col-xs-2">
+				所属小区<span class="text-danger">*</span>
+			</div>
+			<div class="col-xs-6">
+				<select class="form-control" name="estateId" data-validation-engine="validate[required]">
+					
+				</select>
+				<input type="hidden" name="estateName"/>
+			</div>
+		</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary btn-confirm" type="button" data-loading-text="提交中...">确定</button>
+		<button class="btn btn-default" type="button" data-dismiss="modal">取消</button>
+	</div>

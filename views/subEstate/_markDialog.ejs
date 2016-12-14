@@ -1,0 +1,40 @@
+<!-- 标记对话框 -->
+   <form class="validate">
+    <input name="id" type="hidden"/>
+    <input name="subestateId" type="hidden"/>
+    <input name="chooseId" type="hidden"/>
+
+	<div class="modal-header">
+		<button class="close" data-dismiss="modal">&times;</button>
+		<h4>标记</h4>
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div class="col-xs-3"><label>标记选项：</label></div>
+			<div class="col-xs-6"><label><input type="checkbox" name="checked" value="1"/>已核实</label><span class="text-danger hide">（已核实不能再勾选其它选项！）</span></div>
+		</div>
+		<div class="row">
+			<div class="col-xs-3"><label><input type="checkbox"  value="2"/>小区名称有误</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="3"/>子划分不明确</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="4"/>地址有误</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="5"/>重复小区</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="6"/>小区不存在</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="7"/>楼栋</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="8"/>图片已核实</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="9"/>单元</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="10"/>跑盘</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="11"/>世联</label></div>
+			<div class="col-xs-3"><label><input type="checkbox"  value="12"/>地图</label></div>
+		</div><br/>
+		<div class="row">
+			<div class="col-xs-2">描述：</div>
+			<div class="col-xs-8">
+				<textarea class="form-control" name="descript"></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary">确定</button>
+		<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	</div>
+	</form>
