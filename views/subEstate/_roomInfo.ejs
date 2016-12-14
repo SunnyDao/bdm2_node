@@ -1,1 +1,38 @@
-<div>室号信息</div>
+<!--页面正文内容部分-->
+<div class="wrappers">
+    <div class="data-panel">
+        <!--查询区域-->
+        <form class="search-section">
+            <dl>
+                <dt>楼栋名称 ：</dt>
+                <dd>
+                    <select name="" id="selBuilding" class="form-control">
+                        <option value="0">请选择楼栋</option>
+                        <option value="1">1楼</option>
+                        <option value="2">2楼</option>
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>单元名称 ：</dt>
+                <dd>
+                    <select name="" id="selUnit" class="form-control">
+                        <option value="0">请选择单元</option>
+                        <option value="1">1单元</option>
+                        <option value="2">2楼</option>
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>室号 ：</dt>
+                <dd>
+                    <input type="text" class="form-control" id="publisher" placeholder="请输入室号" />
+                </dd>
+            </dl>
+            <button type="button" class="btn btn-primary btn-sm" id="btnSearch">查询</button>
+            <button type="reset" class="btn btn-primary btn-sm" id="btnExport">重置</button>
+        </form>
+        <table id="roomList">
+        </table>
+    </div>
+</div>

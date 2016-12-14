@@ -75,4 +75,11 @@ router.post("/unit/setVirtual", (req, res, next) => {
 /**
  * ================================================UnitMock接口 End====================================================
  */
+
+//获取子划分小区室号列表数据
+router.post("/houseRoom/list.do", (req, res, next) => {
+    let pos = require("../../../json/subEstateRoomInfoList.json");
+    return res.json(pos);
+})
+
 module.exports = router;
