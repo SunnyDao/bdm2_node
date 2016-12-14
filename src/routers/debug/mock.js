@@ -48,4 +48,31 @@ router.post("/estateSubEdit/dotPass.do", (req, res, next) => {
  * ================================================小区列表Mock接口 End====================================================
  */
 
+/**
+ * ================================================UnitMock接口 Start====================================================
+ */
+router.post("/unit/list", (req, res, next) => {
+    let pos = require("../../../json/unitList.json");
+    return res.json(pos);
+})
+
+router.post("/unit/approve", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})
+
+router.post("/unit/reject", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})
+
+router.post("/unit/setReal", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})
+
+router.post("/unit/setVirtual", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})
+
+/**
+ * ================================================UnitMock接口 End====================================================
+ */
 module.exports = router;

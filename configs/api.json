@@ -21,6 +21,10 @@
         "list": ""
     },
     "unit": {
-        "list": ""
+        "list": "unit/list",
+        "approve":"unit/approve",
+        "reject":"unit/reject",
+        "setReal":"unit/setReal",
+        "setVirtual":"unit/setVirtual"
     }
 }
