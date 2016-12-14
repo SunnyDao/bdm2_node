@@ -13,7 +13,7 @@
         ],
         "select2": [
             "/wkzf/js/util/select2/4.0.1/dist/css/select2.min.css"
-        ],
+        ],        
         "treeviewSelect": [
             "/wkzf/jssrc/treeViewSelect/css/treeviewSelect.min.css"
         ],
@@ -29,11 +29,15 @@
     },
     "pluginJs": {
         "wktable": [
-            "/wkzf/js/util/jQuery.wktable/jquery.wktable.min.js"
+            "/wkzf/js/util/jQuery.wktable/jquery.wktable.min.js",
+            "/wkzf/js/util/jQuery.wktable/jquery.wktable.checkall.min.js"
         ],
         "select2": [
             "/wkzf/js/util/select2/4.0.1/dist/js/select2.min.js",
             "/wkzf/js/util/select2/4.0.1/dist/js/i18n/zh-CN.js"
+        ],
+        "cascadingSelect2":[
+            "/wkzf/js/cascadingSelect2.min.js"
         ],
         "moment":[
             "/wkzf/js/util/daterangepicker/moment.min.js"

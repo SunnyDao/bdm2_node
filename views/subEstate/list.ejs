@@ -1,51 +1,137 @@
 <%- include("../components/head") %>
 <!--页面正文内容部分-->
-<div class="wrappers">
-    <div class="data-panel">
-        <!--查询区域-->
-        <form class="search-section">
-            <dl>
-                <dt>小区名称：</dt>
-                <dd>
-                    <input type="text" class="form-control" id="estateName" placeholder="请输入小区名称或简称" />
-                </dd>
-            </dl>
-            <dl>
-                <dt>子划分id ：</dt>
-                <dd>
-                    <input type="text" id="subId" class="form-control" placeholder="请输入子划分ID" />
-                </dd>
-            </dl>
-            <dl>
-                <dt>发布人 ：</dt>
-                <dd>
-                    <input type="text" class="form-control" id="publisher" placeholder="发布人" />
-                </dd>
-            </dl>
-            <dl>
-                <dt>状态 ：</dt>
-                <dd>
-                    <select class="form-control" id="status" style="min-width:200px">
-                        <option value="">请选择</option>
-                        <option value="待审核">待审核</option>
-                        <option value="未通过">未通过</option>
-                        <option value="通过">通过</option>
-                    </select>
-                </dd>
-            </dl>
-            <dl>
-                <dt>所属板块 ：</dt>
-                <dd>
-                    <ul class="js-tree"></ul>
-                    <input type="hidden" id="node-select" name="" value="2">
-                </dd>
-            </dl>
-            <button type="button" class="btn btn-primary btn-sm" id="btnSearch">搜索</button>
-            <button type="reset" class="btn btn-primary btn-sm" id="btnExport">重置</button>
-        </form>
-        <table id="list">
-        </table>
-    </div>
-</div>
+<div class="wrappers">            
+            <div class="data-panel">
+                <!--查询区域-->
+                <form class="search-section">
+                    <dl>
+                        <dt>地域/板块<span class="red-star">*</span> ：</dt>
+                        <dd>
+                            <ul class="js-tree" data-id="43"></ul>
+                            <input type="hidden" id="node-select" name="" value="">
+                        </dd>
+                    </dl> 
+                    <dl>
+                        <dt>描边 ：</dt>
+                        <dd>                            
+                            <select class="form-control" id="isDrawLine">
+                                <option value="">不限</option>
+                                <option value="1">已描边</option>
+                                <option value="2">未描边</option>
+                            </select>
+                        </dd>                        
+                    </dl>
+                    <dl>
+                        <dt>打点 ：</dt>
+                        <dd>
+                            <select class="form-control" id="isLocated">
+                                <option value="">不限</option>
+                                <option value="1">已打点</option>
+                                <option value="2">未打点</option>
+                            </select>
+                        </dd>
+                    </dl>  
+                    <dl>
+                        <dt>子划分ID ：</dt>
+                        <dd>
+                            <input type="text" placeholder="精确查询" class="form-control" id="subEstateId"/>
+                        </dd>
+                    </dl> 
+                    <dl>
+                        <dt>标记 ：</dt>
+                        <dd>
+                            <select class="form-control" id="isMarked">
+                                <option value="">不限</option>
+                                <option value="222">已标记</option>
+                                <option value="111">未标记</option>
+                            </select>
+                        </dd>
+                    </dl>   
+                    <dl>
+                        <dt>锁定 ：</dt>
+                        <dd>
+                        <select class="form-control" id="isLocked">
+                            <option value="">不限</option>
+                            <option value="0">未锁定</option>
+                            <option value="1">锁定</option>
+                            </select>
+                        </dd>
+                    </dl> 
+                    <dl>
+                        <dt>图片 ：</dt>
+                        <dd>
+                        <select class="form-control" id="hasImage">
+                            <option value="">不限</option>
+                            <option value="0">有图片</option>
+                            <option value="1">无图片</option>
+                            </select>
+                        </dd>
+                    </dl>  
+                    <dl>
+                        <dt>房屋 ：</dt>
+                        <dd>
+                        <select class="form-control" id="hasHouse">
+                            <option value="">不限</option>
+                            <option value="1">有房屋</option>
+                            <option value="2">无房屋</option>
+                            </select>
+                        </dd>
+                    </dl> 
+                    <dl>
+                        <dt>楼栋 ：</dt>
+                        <dd>
+                        <select class="form-control" id="hasBuilding">
+                            <option value="">不限</option>
+                            <option value="1">有楼栋</option>
+                            <option value="2">无楼栋</option>
+                            </select>
+                        </dd>
+                    </dl>   
+                    <dl>
+                        <dt>是否已完善 ：</dt>
+                        <dd>
+                        <select class="form-control" id="isFinished">
+                            <option value="">不限</option>
+                            <option value="2">是</option>
+                            <option value="1">否</option>
+                            </select>
+                        </dd>
+                    </dl>  
+                    <dl>
+                        <dt>是否新房 ：</dt>
+                        <dd>
+                        <select class="form-control" id="isNew">
+                            <option value="">不限</option>
+                            <option value="1">是</option>
+                            <option value="2">否</option>
+                            </select>
+                        </dd>
+                    </dl>   
+                    <dl>
+                        <dt>小区名称 ：</dt>
+                        <dd>
+                            <input type="text" placeholder="模糊查询" class="form-control" id="estateName"/>
+                        </dd>
+                    </dl>         
+                    <dl>
+                        <dt>小区地址 ：</dt>
+                        <dd>
+                             <input type="text" placeholder="模糊查询" class="form-control" id="estateAddress"/>
+                        </dd>
+                    </dl> 
+                    <button type="button" class="btn btn-primary btn-sm" id="btnSearch">查询</button>  <button type="reset" class="btn btn-primary btn-sm" id="btnExport">重置</button>  
+                </form>  
+                
+                <p class="tools">
+                    <a href="javascript:void(0);" class="add dialog-handle" data-href="/common/beetl/subEstate/addDialog.btl" data-dialog-id="addDialog" data-dialog-dimension="xlg" id="btnAdd"><span><i class="iconfont icon-jia1"></i>新增</span></a>                    
+                    <a href="javascript:void(0);" class="add" id="btnDelete"><span><i class="iconfont icon-shanchu1"></i>删除</span></a>
+                    <a href="javascript:void(0);" class="add dialog-handle" id="btnTransfer" data-href="/common/beetl/subEstate/transferDialog.btl" data-dialog-id="transferDialog" data-dialog-dimension="md"><span><i class="iconfont icon-zhuantui"></i>转移</span></a>
+                    </p>
+
+                <table id="list">
+                    
+                </table>
+            </div>
+        </div>
 
 <%- include("../components/footer") %>

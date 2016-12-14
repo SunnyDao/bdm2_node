@@ -18,7 +18,23 @@
         "area": "common/getCityAll"
     },
     "subEstate": {
-        "list": ""  
+        "list": "estate/subEstate/list.do",
+        "getSubEstateMark":"estate/getSubestateComparePage.do",
+        "deleteSubEstate":"dataprocess/deleteEstateSubList.do",
+        "lockSubEstate":"dataprocess/lockEstateSub.do",
+        "unlockSubEstate":"dataprocess/lockEstateSub.do",
+        "addSubEstate":"dataprocess/addEstateSubInfo.do",
+        "transferSubEstate":"dataprocess/mergeSubCascade.do",
+        "updateSubEstate":"dataprocess/updateEstateSubCasecad.do",
+        "getSubEstateById":"dataprocess/getEstateSubById.do",
+        "finishSubEstate":"dataprocess/perfected.do",
+        "getBoundSchool":"estate/getEstateSchoolList.do",
+        "markSubEstate":"estate/saveSubestateCompare.do",
+        "getCountries":"common/getCountry.do",
+        "getCities":"common/getCity.do",
+        "getDistricts":"common/list/simple.do",
+        "getTowns":"common/townList.do",
+        "getEstatesByTownId":"common/getEstateInfoByTownId.do"
     },
     "subEstateRomm":{
         "list":"houseRoom/list.do"
