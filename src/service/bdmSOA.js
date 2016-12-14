@@ -1,6 +1,6 @@
 /**
  * author:yuxiaochen@lifang.com
- * desc:法务系统调用SOA 服务类
+ * desc:BDM调用SOA 服务类
  */
 
 import SOA_Base from '../core/soa_base';
@@ -12,7 +12,7 @@ import _ from 'lodash';
 const env = process.env.STAGE_ENV;
 const soaConf = config.getSoaConf();
 
-class Legal_SOA extends SOA_Base {
+class BDM_SOA extends SOA_Base {
     /**
      * @desc 构造函数
      */
@@ -21,7 +21,13 @@ class Legal_SOA extends SOA_Base {
     }
 
     /**
-     * 重写genOpts 方法
+     * @desc 生成请求的options
+     * @param  {Object} {data:请求参数
+     * @param  {String} moduleName:模块名称
+     * @param  {String} actionName:方法名称
+     * @param  {String} method
+     * @param  {Boolean} json
+     * @param  {String} contentType="application/json"
      */
     genOpts(data, {moduleName, actionName, json, method, encoding, contentType}) {
         let soa_opts = super.genOpts(data, { moduleName, actionName, json, method, encoding, contentType });
@@ -87,4 +93,4 @@ class Legal_SOA extends SOA_Base {
     }
 }
 
-export default Legal_SOA;
+export default BDM_SOA;

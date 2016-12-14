@@ -22,8 +22,17 @@ class SOA_Base {
 
     }
 
+   
     /**
-     * @desc 请求soa
+     * @param  {Object} {data:请求参数
+     * @param  {soaOpt:soa请求参数
+     * @param  {String} moduleName:模块名称
+     * @param  {String} actionName:方法名称
+     * @param  {String} method="get"
+     * @param  {Boolean} json=true:返回数据是否转成json
+     * @param  {String} contentType="application/json"
+     * @param  {String} encoding
+     * @param  {Boolean|Object} converter=true|{mapperName:"xxx",mapperFunc:"yyy"}}}false:不对soa数据进行转换，true:根据moduleName和actionName找相应的mapper，object:根据mapperName和mapperFunc找相应的mapper
      */
     async request({data, soaOpt: { moduleName, actionName, method = "get", json = true, contentType = "application/json", encoding, converter = true}}) {
         //生成soa 请求options
@@ -54,12 +63,12 @@ class SOA_Base {
 
     /**
      * @desc 生成请求的options
-     * @param  {} moduleName
-     * @param  {} actionName
-     * @param  {} method="get"
-     * @param  {} json=true
-     * @param  {} contentType="application/json"
-     * @param  {} converter=true
+     * @param  {Object} {data:请求参数
+     * @param  {String} moduleName:模块名称
+     * @param  {String} actionName:方法名称
+     * @param  {String} method
+     * @param  {Boolean} json
+     * @param  {String} contentType="application/json"
      */
     genOpts(data, {moduleName, actionName, json, method, encoding, contentType}) {
         let soaConf = config.getSoaConf();
@@ -108,7 +117,10 @@ class SOA_Base {
 
     /**
      * @desc 对于response 对象的 转换方法
-     * @param  {} res:soa 下发对象
+     * @param  {String} moduleName:模块名称
+     * @param  {String} actionName:方法名称
+     * @param  {Boolean|Object} converter}|{mapperName:"xxx",mapperFunc:"yyy"}}}false:不对soa数据进行转换，true:根据moduleName和actionName找相应的mapper，object:根据mapperName和mapperFunc找相应的mapper
+     * @param  {} res:soa返回结果
      */
     transform({moduleName, actionName, converter}, res) {
         try {
@@ -143,6 +155,9 @@ class SOA_Base {
 
     /**
     * @desc 获取数据转换的方式
+    * @param  {String} moduleName:模块名称
+    * @param  {String} actionName:方法名称
+    * @param  {Boolean|Object} converter}|{mapperName:"xxx",mapperFunc:"yyy"}}}false:不对soa数据进行转换，true:根据moduleName和actionName找相应的mapper，object:根据mapperName和mapperFunc找相应的mapper
     */
     getConverter({moduleName, actionName, converter}) {
         let converterFn;
