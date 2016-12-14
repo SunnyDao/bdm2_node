@@ -5,11 +5,11 @@
 
 import express from "express";
 import Logger from '../../utils/logger';
-import proxyFactory from '../../core/proxyfactory';
+import ModuleFactory from '../../core/factory';
 
 
 let router = express.Router();
-let commonPxy = proxyFactory.createPxy("common");
+let commonPxy = ModuleFactory.createProxy("common");
 
 /**
  * desc:获取城市数据

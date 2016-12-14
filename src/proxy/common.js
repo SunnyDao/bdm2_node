@@ -3,10 +3,9 @@
  * desc:公共服务调用soa类
  */
 
+import ModuleFactory from '../core/factory';
 
-import SOAFactory from '../core/soafactory';
-
-let bdmSOA = SOAFactory.createSOA("bdmSOA"); 
+let bdmService = ModuleFactory.createService("bdmSOA"); 
 
 class Common {
     constructor() {
@@ -39,7 +38,7 @@ class Common {
                 converter: { mapperName: "area", mapperFunc: "list" }
             }
         }
-        return await bdmSOA.request(this.options);
+        return await bdmService.request(this.options);
     }
 
     /**
@@ -61,7 +60,7 @@ class Common {
             }
         }
 
-        return await bdmSOA.request(this.options);
+        return await bdmService.request(this.options);
     }
 
 }

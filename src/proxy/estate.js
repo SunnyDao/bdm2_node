@@ -4,9 +4,9 @@
  */
 
 
-import SOAFactory from '../core/soafactory';
+import ModuleFactory from '../core/factory';
 
-let bdmSOA = SOAFactory.createSOA("bdmSOA");
+let bdmService = ModuleFactory.createService("bdmSOA"); 
 
 class Estate {
     constructor() {
@@ -49,7 +49,7 @@ class Estate {
                 method: "post"
             }
         }
-        return await bdmSOA.request(this.options);
+        return await bdmService.request(this.options);
     }
 
     /**
@@ -75,7 +75,7 @@ class Estate {
                 method: "post"
             }
         }
-        return await bdmSOA.request(this.options);
+        return await bdmService.request(this.options);
     }
 
     /**
@@ -103,7 +103,7 @@ class Estate {
                 method: "post"
             }
         }
-        return await bdmSOA.request(this.options);
+        return await bdmService.request(this.options);
     }
 
     /**
@@ -131,7 +131,7 @@ class Estate {
                 method: "post"
             }
         }
-        return await bdmSOA.request(this.options);
+        return await bdmService.request(this.options);
     }
 }
 

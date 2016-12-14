@@ -5,11 +5,15 @@
 
 import express from "express";
 import Logger from '../../utils/logger';
-import proxyFactory from '../../core/proxyFactory';
+import ModuleFactory from '../../core/factory';
 
 
 let router = express.Router();
-let subEstatePxy = proxyFactory.createPxy("unit");
+let subEstatePxy = ModuleFactory.createProxy("unit");
+
+
+
+
 
 
 

@@ -6,7 +6,6 @@
 import express from "express";
 import logger from '../../utils/logger';
 import routerUtil from "../../utils/router";
-import proxyFactory from '../../core/proxyfactory';
 
 
 let router = express.Router();
