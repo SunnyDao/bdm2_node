@@ -1,0 +1,51 @@
+<%- include("../components/head") %>
+<!--页面正文内容部分-->
+<div class="wrappers">
+    <div class="data-panel">
+        <!--查询区域-->
+        <form class="search-section">
+            <dl>
+                <dt>小区名称：</dt>
+                <dd>
+                    <input type="text" class="form-control" id="estateName" placeholder="请输入小区名称或简称" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>子划分id ：</dt>
+                <dd>
+                    <input type="text" id="subId" class="form-control" placeholder="请输入子划分ID" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>发布人 ：</dt>
+                <dd>
+                    <input type="text" class="form-control" id="publisher" placeholder="发布人" />
+                </dd>
+            </dl>
+            <dl>
+                <dt>状态 ：</dt>
+                <dd>
+                    <select class="form-control" id="status" style="min-width:200px">
+                        <option value="">请选择</option>
+                        <option value="待审核">待审核</option>
+                        <option value="未通过">未通过</option>
+                        <option value="通过">通过</option>
+                    </select>
+                </dd>
+            </dl>
+            <dl>
+                <dt>所属板块 ：</dt>
+                <dd>
+                    <ul class="js-tree"></ul>
+                    <input type="hidden" id="node-select" name="" value="2">
+                </dd>
+            </dl>
+            <button type="button" class="btn btn-primary btn-sm" id="btnSearch">搜索</button>
+            <button type="reset" class="btn btn-primary btn-sm" id="btnExport">重置</button>
+        </form>
+        <table id="list">
+        </table>
+    </div>
+</div>
+
+<%- include("../components/footer") %>
