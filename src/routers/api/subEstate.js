@@ -9,11 +9,23 @@ import ModuleFactory from '../../core/factory';
 
 
 let router = express.Router();
-let subEstatePxy = ModuleFactory.createProxy("unit");
+let subEstatePxy = ModuleFactory.createProxy("subEstate");
 
 
 
 
+/**
+ * 获取室号详情列表
+ */
+router.get("/getRoomInfoList", async (req, res, next) => {
+    try {
+        let result = await subEstatePxy.getRoomInfoList(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('subEstate Api==>getRoomInfoList:' + e);
+        next(e);
+    }
+})
 
 
 

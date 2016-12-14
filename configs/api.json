@@ -17,10 +17,15 @@
         "user": "user/getCurrentUser.action",
         "area": "common/getCityAll"
     },
-    "subestate": {
-        "list": ""
+    "subEstate": {
+        "list": "",
+        "roomList":"houseRoom/list.do"
     },
     "unit": {
-        "list": ""
+        "list": "unit/list",
+        "approve":"unit/approve",
+        "reject":"unit/reject",
+        "setReal":"unit/setReal",
+        "setVirtual":"unit/setVirtual"
     }
 }
