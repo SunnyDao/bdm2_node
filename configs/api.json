@@ -17,8 +17,9 @@
         "user": "user/getCurrentUser.action",
         "area": "common/getCityAll"
     },
-    "subestate": {
-        "list": ""
+    "subEstate": {
+        "list": "",
+        "roomList":"houseRoom/list.do"
     },
     "unit": {
         "list": ""

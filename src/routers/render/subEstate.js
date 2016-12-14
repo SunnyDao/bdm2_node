@@ -36,7 +36,9 @@ router.get("/details", function (req, res, next) {
     let param = {
         req: req,
         matchJavascript: true,
-        matchStylesheet: true
+        matchStylesheet: true,
+        extraJavascripts: ["wktable","moment"],
+        extraStylesheets: ["treeviewSelect", "wktable"]
     }
 
     let templateData = routerUtil.getTemplateBasicData(param);
@@ -93,3 +95,5 @@ router.get('/roomInfoView', (req, res, next) => {
 /**
  * =======================================部分视图路由定义End=======================================
  */
+
+module.exports = router;
