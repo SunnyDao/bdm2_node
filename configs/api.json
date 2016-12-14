@@ -36,7 +36,14 @@
         "getTowns":"common/townList.do",
         "getEstatesByTownId":"common/getEstateInfoByTownId.do"
     },
+    "subEstateRomm":{
+        "list":"houseRoom/list.do"
+    },
     "unit": {
-        "list": ""
+        "list": "unit/list",
+        "approve":"unit/approve",
+        "reject":"unit/reject",
+        "setReal":"unit/setReal",
+        "setVirtual":"unit/setVirtual"
     }
 }
