@@ -1,0 +1,113 @@
+{
+    "status": 1,
+    "message": "",
+    "data": {
+        "items": [
+            {
+                "unitId": 1,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 2,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 3,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 4,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 5,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 6,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 7,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 8,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 9,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            },
+            {
+                "unitId": 10,
+                "estateName": "测试小区",
+                "buildingName": "测试楼栋",
+                "unitName": "单元名称",
+                "unitType": 1,
+                "lockStatus": 1,
+                "status": 1,
+                "createDateTime": "2016-11-11 11:11"
+            }
+        ],
+        "page": {
+            "pageIndex": 1,
+            "pageSize": 10,
+            "total": 300
+        }
+    }
+}
