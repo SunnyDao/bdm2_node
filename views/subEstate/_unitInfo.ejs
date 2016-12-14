@@ -1,1 +1,44 @@
-<div>单元信息</div>
+<div>
+    <form class="search-section">
+        <dl>
+            <dt>楼栋名称：</dt>
+            <dd>
+                <select class="form-control" id="status" style="min-width:200px">
+                    <option value="全部">全部</option>
+                    <option value="锁定">锁定</option>
+                    <option value="未锁定">未锁定</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>锁定状态：</dt>
+            <dd>
+                <select class="form-control" id="unitStatus" style="min-width:200px">
+                    <option value="全部">全部</option>
+                    <option value="锁定">锁定</option>
+                    <option value="未锁定">未锁定</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>单元类型：</dt>
+            <dd>
+                <select class="form-control" id="unitStyle" style="min-width:200px">
+                    <option value="">请选择</option>
+                    <option value="待审核">待审核</option>
+                    <option value="未通过">未通过</option>
+                    <option value="通过">通过</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt>创建日期：</dt>
+            <dd>
+            </dd>
+        </dl>
+        <button type="button" class="btn btn-primary btn-sm" id="btnSearch">搜索</button>
+        <button type="reset" class="btn btn-primary btn-sm" id="btnExport">重置</button>
+    </form>
+    <table id="unitList">
+    </table>
+</div>
