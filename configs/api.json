@@ -18,13 +18,19 @@
         "area": "common/getCityAll"
     },
     "subEstate": {
-        "list": "",
-        "roomList":"houseRoom/list.do"
+        "list": ""  
+    },
+    "subEstateRomm":{
+        "list":"houseRoom/list.do"
     },
      "subEstateBuildingInfo": {
         "list": ""
     },
     "unit": {
-        "list": ""
+        "list": "unit/list",
+        "approve":"unit/approve",
+        "reject":"unit/reject",
+        "setReal":"unit/setReal",
+        "setVirtual":"unit/setVirtual"
     }
 }

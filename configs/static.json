@@ -38,7 +38,7 @@
         "moment":[
             "/wkzf/js/util/daterangepicker/moment.min.js"
         ],
-        "datarangepicker":[
+        "daterangepicker":[
             "/wkzf/js/util/daterangepicker/daterangepicker.js"
         ],
         "bootstrap-switch":[
