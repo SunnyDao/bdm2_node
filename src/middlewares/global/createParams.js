@@ -5,6 +5,7 @@
 
 
 export default function (req, res, next) {
-    req.app.locals.SOAParams = Object.assign(req.query, req.body, { cookies: req.cookies });
+    let userId = req.session.user ? req.session.user.id : "";
+    req.app.locals.SOAParams = Object.assign(req.query, req.body, { cookies: req.cookies }, { userId: userId });
     next();
 }

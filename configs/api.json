@@ -38,7 +38,7 @@
     },
     "subEstateRoom": {
         "list": "houseRoom/list.do",
-        "buildings": "houseRoom/buildings.do",
+        "buildings": "estateUnit/getBuldListBySubEstId.do",
         "units": "houseRoom/units.do"
     },
      "subEstateBuilding": {
