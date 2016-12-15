@@ -17,8 +17,8 @@ let itemMap = {
     unitTypeStr: "unitTypeStr",
     lockStatus: "lockStatus",
     lockStatusStr: "lockStatusStr",
-    status: "status",
-    statusStr: "statusStr",
+    auditStatus: "status",
+    auditStatusStr: "statusStr",
     createDateTime: "createDateTime",
 };
 

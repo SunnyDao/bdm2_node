@@ -7,8 +7,8 @@
         <form class="search-section" id="groupon_Form">
             <dl>
                 <dt>城市：</dt>
-                <dd>
-                    <ul id="js-tree"></ul>
+                <dd class="city">
+                    <ul class="js-tree"></ul>
                     <input type="hidden" id="cityId" name="cityId">                        
                 </dd>
             </dl> 
@@ -32,21 +32,22 @@
             </dl> 
             <dl>
                 <dt>创建日期：</dt>
-                <dd>
-                    <input type="text" class="form-control" id="createDate"/>
+                <dd class="date">
+                    <input type="text" class="form-control" id="daterangepicker"/>
                     <input type="hidden" name="createStartDate"/>
                     <input type="hidden" name="createEndDate"/>
+                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
                 </dd>
             </dl> 
-            <button type="button" class="btn btn-primary btn-sm" id="groupon_select">查询</button>
-            <button type="button" class="btn btn-primary btn-sm" id="groupon_resice">重置</button>        
+            <button type="button" class="btn btn-primary btn-sm" id="searchBtn">查询</button>
+            <button type="reset" class="btn btn-primary btn-sm" id="resetBtn">重置</button>        
         </form>
         <!--工具条-->
         <p class="tools">
-            <a href="javascript:void(0);" class="dialog-handle add pass"><span><i class="iconfont icon-zhengque"></i> 审核通过</span></a>
-            <a href="javascript:void(0);" class="dialog-handle add reject"><span><i class="iconfont icon-cuowu"></i> 审核失败</span></a>
-            <a href="javascript:void(0);" class="dialog-handle add real"><span><i class="iconfont icon-bianji"></i> 设为实体</span></a>
-            <a href="javascript:void(0);" class="dialog-handle add virtual"><span><i class="iconfont icon-bianji"></i> 设为虚拟</span></a>
+            <a href="javascript:void(0);" class="dialog-handle add" id="pass"><span><i class="iconfont icon-zhengque"></i> 审核通过</span></a>
+            <a href="javascript:void(0);" class="dialog-handle add" id="reject"><span><i class="iconfont icon-cuowu"></i> 审核失败</span></a>
+            <a href="javascript:void(0);" class="dialog-handle add" id="real"><span><i class="iconfont icon-bianji"></i> 设为实体</span></a>
+            <a href="javascript:void(0);" class="dialog-handle add" id="virtual"><span><i class="iconfont icon-bianji"></i> 设为虚拟</span></a>
         </p>        
          <!--表格区域-->
         <div class="table-box">

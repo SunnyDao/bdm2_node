@@ -131,7 +131,7 @@ router.post("/houseRoom/list.do", (req, res, next) => {
     return res.json(pos);
 })
 //获取子划分小区下楼栋名称数据
-router.post("/houseRoom/buildings.do", (req, res, next) => {
+router.post("/estateUnit/getBuldListBySubEstId.do", (req, res, next) => {
     let pos = require("../../../json/subEstateBuildings.json");
     return res.json(pos);
 })

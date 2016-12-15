@@ -8,8 +8,9 @@ import mapperTransform from "./common";
 import Logger from '../utils/logger';
 
 let buildingItem = {
-    id: "id",
-    text: "text"
+    buildingId: "id",
+    buildingName: "text",
+    unitProperty: "type"
 };
 
 

@@ -128,7 +128,6 @@ router.get('/roomInfoView', async (req, res, next) => {
     try {
         //根据子划分id,获取楼栋名称信息
         let buindings=await subEstateRoomPxy.getBuildings(req.app.locals.SOAParams);
-        console.log(JSON.stringify(buindings));
         return res.render('subEstate/_roomInfo', buindings);
     }
     catch (e) {
