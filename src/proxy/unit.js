@@ -63,7 +63,7 @@ class Unit {
      * @param  {Integer} pageSize
      * @param  {} cookies}
      */
-    async getList({cityId, unitId, estateName, buildingName, createStartDate, createEndDate, pageIndex, pageSize, cookies}) {
+    async getAuditList({cityId, unitId, estateName, buildingName, createStartDate, createEndDate, pageIndex, pageSize, cookies}) {
         let opt_data = {
             reqData: {
                 cityId,
