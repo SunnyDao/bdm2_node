@@ -1,1 +1,67 @@
-<div>楼栋信息</div>
+<!--楼栋信息-->
+<!--页面正文内容部分-->
+<div class="wrappers">
+	<div class="data-panel">
+		<!--查询区域-->
+		<form class="search-section">
+			<dl>
+				<dt>楼栋号：</dt>
+				<dd>
+					<input type="text" class="form-control" name="buildingNumber" placeholder="模糊查询" />
+				</dd>
+			</dl>
+			<dl>
+				<dt>楼栋名称 ：</dt>
+				<dd>
+					<input type="text" name="buildingName" class="form-control" placeholder="模糊查询" />
+				</dd>
+			</dl>
+			<dl>
+				<dt>是否打点 ：</dt>
+				<dd>
+					<select class="form-control" name="itudeid" style="min-width:200px">
+                                <option value="">不限</option>
+                                <option value="1">已打点</option>                                                      
+                                <option value="0">未打点</option>
+                            </select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>锁定状态 ：</dt>
+				<dd>
+					<select class="form-control" name="lockStatus" style="min-width:200px">
+                                <option value="">不限</option>
+                                <option value="0">未锁定</option>                                                      
+                                <option value="1">锁定</option>
+                            </select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>有无房源 ：</dt>
+				<dd>
+					<select class="form-control" name="hasHouse" style="min-width:200px">
+                                <option value="">不限</option>
+                                <option value="1">有房源</option>                                                      
+                                <option value="2">无房源</option>
+                            </select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>楼栋状态 ：</dt>
+				<dd>
+					<select class="form-control" name="unitflag" style="min-width:200px">
+                                <option value="">不限</option>
+                                <option value="0">虚拟</option>                                                      
+                                <option value="1">实体</option>
+                            </select>
+				</dd>
+			</dl>
+			<button type="button" class="btn btn-primary btn-sm" id="btnSearch">搜索</button> <button type="reset" class="btn btn-primary btn-sm"
+				id="btnExport">重置</button>
+		</form>
+		<input type="hidden" name="subEstateId" value="${subEstateId}">
+		<table id="list">
+
+		</table>
+	</div>
+</div>

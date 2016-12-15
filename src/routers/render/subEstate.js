@@ -6,13 +6,17 @@
 import express from "express";
 import logger from '../../utils/logger';
 import routerUtil from "../../utils/router";
+import ModuleFactory from '../../core/factory';
 
 let router = express.Router();
+
+let subEstateRoomPxy = ModuleFactory.createProxy("subEstateRoom");
+
 
 /**
  * desc:小区子划分列表
  */
-router.get("/list", function (req, res, next) {
+router.get("/list", function(req, res, next) {
     let param = {
         req: req,
         matchJavascript: true,
@@ -31,52 +35,52 @@ router.get("/list", function (req, res, next) {
 /**
  * desc:添加子划分对话框视图
  */
-router.get("/addDialogView", function (req, res, next) {
+router.get("/addDialogView", function(req, res, next) {
     return res.render('subEstate/_addDialog');
 })
 
 /**
  * desc:转移子划分对话框视图
  */
-router.get("/transferDialogView", function (req, res, next) {
+router.get("/transferDialogView", function(req, res, next) {
     return res.render('subEstate/_transferDialog');
 })
 
 /**
  * desc:标记对话框视图
  */
-router.get("/markDialogView", function (req, res, next) {
+router.get("/markDialogView", function(req, res, next) {
     return res.render('subEstate/_markDialog');
 })
 
 /**
  * desc:绑定学校对话框视图
  */
-router.get("/boundSchoolDialogView", function (req, res, next) {
+router.get("/boundSchoolDialogView", function(req, res, next) {
     return res.render('subEstate/_boundSchoolDialog');
 })
 
 /**
  * desc:完善情况对话框视图
  */
-router.get("/finishDialogView", function (req, res, next) {
+router.get("/finishDialogView", function(req, res, next) {
     return res.render('subEstate/_finishDialog');
 })
 /**
  * desc:子划分明细
  */
-router.get("/details", function (req, res, next) {
+router.get("/details", function(req, res, next) {
     let param = {
         req: req,
         matchJavascript: true,
         matchStylesheet: true,
-        extraJavascripts: ["wktable","moment"],
+        extraJavascripts: ["wktable", "moment"],
         extraStylesheets: ["treeviewSelect", "wktable"]
     }
 
     let templateData = routerUtil.getTemplateBasicData(param);
 
-    Object.assign(templateData, { "title": "小区子划分明细","id":req.body.id });
+    Object.assign(templateData, { "title": "小区子划分明细", "id": req.body.id });
 
     return res.render("subEstate/details", templateData);
 })
@@ -112,8 +116,16 @@ router.get('/unitInfoView', (req, res, next) => {
 /**
  * 室号信息
  */
-router.get('/roomInfoView', (req, res, next) => {
-    return res.render('subEstate/_roomInfo', req);
+router.get('/roomInfoView', async (req, res, next) => {
+    try {
+        //根据子划分id,获取楼栋名称信息
+        let buindings=await subEstateRoomPxy.getBuildings(req.app.locals.SOAParams);
+        return res.render('subEstate/_roomInfo', buindings);
+    }
+    catch (e) {
+        logger.error('subEstate roomInfoView==>:' + e);
+        next(e);
+    }
 });
 
 
