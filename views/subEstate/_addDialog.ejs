@@ -1,0 +1,321 @@
+<!-- 添加/修改小区子划分对话框 -->
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">&times;</button>
+    <h4 class="modal-title">新增</h4>
+</div>
+<div class="modal-body">
+    <form class="validate" action="/dataprocess/addEstateSubInfo.do">
+        <input type="hidden" name="id" />
+        <div class="row">
+            <div class="col-xs-1">
+                <input type="checkbox" checked name="type" class=""/>
+                <input type="hidden" name="newhouse" value="1"/>
+            </div>
+        </div>
+        <br/>
+        <div class="row">            
+            <div class="col-xs-2 text-right">
+                <label>所属城市<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" data-validation-engine="validate[required]" name="cityId">
+                    
+                </select>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>所属区域<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" data-validation-engine="validate[required]" name="suptownid">
+                    
+                </select>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>所属板块<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" data-validation-engine="validate[required]" name="townid">
+                    
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right">
+                <label>所属小区<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" data-validation-engine="validate[required]" name="estateId">
+                    
+                </select>
+                <input type="hidden" name="estateName"/>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>小区大门地址<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="initName" data-validation-engine="validate[required]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>小区子划分名称<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="subEstateName" data-validation-engine="validate[required]" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2 text-right">
+                <label>小区子划分顺序：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="number" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>小区房号规则<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" data-validation-engine="validate[required]" name="roomRule">
+                    <option value="0">无限制</option>
+                    <option value="1">字母+数字</option>
+                    <option value="2">数字</option>
+                </select>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>锁定状态<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" name="lockStatus" data-validation-engine="validate[required]">
+                    <option value="1">锁定</option>
+                    <option value="0">未锁定</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">                        
+            <div class="col-xs-2 text-right">
+                <label>竣工年代（年）<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="completed" data-validation-engine="validate[required,custom[integer],min[1000],max[3000]]" placeholder="请输入1000-3000以内的数值" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>产权年限（年）<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" placeholder="请输入0-100以内的数值" class="form-control" name="propertyRight" data-validation-engine="validate[required,custom[integer],min[0],max[100]]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>总户数（户）<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2 text-right">
+                <input type="text" class="form-control" placeholder="请输入数字" name="totalHouse" data-validation-engine="validate[required,custom[integer]]" />
+            </div>
+        </div>
+        <div class="row">                        
+            <div class="col-xs-2 text-right">
+                <label>开发商<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="developers" data-validation-engine="validate[required]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>开发商电话<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="developers_phone" data-validation-engine="validate[required]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>物业类型<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" name="propertyType" data-validation-engine="validate[required]">
+                    <option value="1">住宅</option>
+                    <option value="2">商用</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">                        
+            <div class="col-xs-2 text-right">
+                <label>物业费：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="propertyCharges"/>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>物业公司：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="propertyCompany" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>物业电话：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="propertyPhone" />
+            </div>
+        </div>
+        <div class="row">                        
+            <div class="col-xs-2 text-right">
+                <label>容积率（元/㎡/月）：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="volumeRate" data-validation-engine="validate[custom[number]]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>绿化率（%）：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="greenRate" data-validation-engine="validate[custom[number]]"/>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>总建筑面积(㎡)：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="totalFloorage" data-validation-engine="validate[custom[number]]"/>
+            </div>
+        </div>
+        <div class="row">                        
+            <div class="col-xs-2 text-right">
+                <label>停车位：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" name="parkingLot">
+                    <option value="0">没有</option>
+                    <option value="1">有</option>
+                </select>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>交通：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="traffic" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>商圈：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="businessCycle" />
+            </div>
+        </div>
+        <div class="row">                        
+            <div class="col-xs-2 text-right">
+                <label>银行：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="bank" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>医院：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="hospital" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>公园：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="park" />
+            </div>
+        </div>
+        <br/>
+        <div class="row only-new">
+            <div class="col-xs-2 text-right">
+                <label>开盘时间<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="openTime" data-validation-engine="validate[required]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>售楼地址<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="saleAddress" data-validation-engine="validate[required]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>售楼电话<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2 text-right">
+                <input type="text" class="form-control" name="salePhone" data-validation-engine="validate[required]" />
+            </div>            
+        </div>
+        <div class="row only-new">
+            <div class="col-xs-2 text-right">
+                <label>交房时间<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="launchTime" data-validation-engine="validate[required]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>规划户数（户）<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="planRoom" data-validation-engine="validate[required]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>是否合作小区<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" name="hasCooperation" data-validation-engine="validate[required]">
+                    <option value="1">是</option>
+                    <option value="0">否</option>
+                </select>
+            </div>
+        </div>
+        <div class="row only-new">
+            <div class="col-xs-2 text-right">
+                <label>装修情况<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-2">
+                <select class="form-control" name="buildDecoration" data-validation-engine="validate[required]">
+                    <option value="1">毛坯</option>
+                    <option value="2">精装</option>
+                    <option value="3">豪装</option>                    
+                </select>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>占地面积（㎡）：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="floorArea" data-validation-engine="validate[costum[number]]"/>
+            </div>
+        </div>
+        <div class="row only-new">
+            <div class="col-xs-2 text-right">
+                <label>面积范围(㎡)<span class="text-danger">*</span>：</label>
+            </div>
+            <div class="col-xs-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="startSpace" data-validation-engine="validate[required,custom[number]]" />
+                    <span class="input-group-addon">至</span>
+                    <input type="text" class="form-control" name="endSpace" data-validation-engine="validate[required,custom[number]]" />
+                </div>
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>总价范围(万)：</label>
+            </div>
+            <div class="col-xs-4">
+                <div class="input-group">
+                <input type="text" class="form-control" name="startTotalPrice" data-validation-engine="validate[custom[number]]" />
+                    <span class="input-group-addon">至</span>
+                    <input type="text" class="form-control" name="endTotalPrice" data-validation-engine="validate[custom[number]]" />
+                </div>
+            </div>
+        </div>
+        <div class="row only-new">
+            <div class="col-xs-2 text-right">
+                <label>地上车位（个）：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="groundCarSpace" data-validation-engine="validate[custom[integer]]" />
+            </div>
+            <div class="col-xs-2 text-right">
+                <label>地下车位（个）：</label>
+            </div>
+            <div class="col-xs-2">
+                <input type="text" class="form-control" name="undergroundCarSpace" data-validation-engine="validate[custom[integer]]" />
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="submit" class="btn btn-primary btn-confirm">确定</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+</div>
