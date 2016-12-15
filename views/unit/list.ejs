@@ -1,0 +1,59 @@
+<%- include("../components/head") %>
+<!--页面正文内容部分-->
+<div class="wrappers">
+    <!--数据面板-->
+    <div class="data-panel">
+        <!--查询区域-->
+        <form class="search-section" id="groupon_Form">
+            <dl>
+                <dt>城市：</dt>
+                <dd>
+                    <ul id="js-tree"></ul>
+                    <input type="hidden" id="cityId" name="cityId">                        
+                </dd>
+            </dl> 
+            <dl>
+                <dt>单元ID：</dt>
+                <dd>
+                    <input type="text" class="form-control" name="unitId" placeholder="精确搜索"/>
+                </dd>
+            </dl> 
+            <dl>
+                <dt>小区名称：</dt>
+                <dd>
+                    <input type="text" class="form-control" name="estateName" placeholder="模糊搜索"/>
+                </dd>
+            </dl> 
+            <dl>
+                <dt>楼栋名称：</dt>
+                <dd>
+                    <input type="text" class="form-control" name="buildingName" placeholder="模糊搜索"/>
+                </dd>
+            </dl> 
+            <dl>
+                <dt>创建日期：</dt>
+                <dd>
+                    <input type="text" class="form-control" id="createDate"/>
+                    <input type="hidden" name="createStartDate"/>
+                    <input type="hidden" name="createEndDate"/>
+                </dd>
+            </dl> 
+            <button type="button" class="btn btn-primary btn-sm" id="groupon_select">查询</button>
+            <button type="button" class="btn btn-primary btn-sm" id="groupon_resice">重置</button>        
+        </form>
+        <!--工具条-->
+        <p class="tools">
+            <a href="javascript:void(0);" class="dialog-handle add pass"><span><i class="iconfont icon-zhengque"></i> 审核通过</span></a>
+            <a href="javascript:void(0);" class="dialog-handle add reject"><span><i class="iconfont icon-cuowu"></i> 审核失败</span></a>
+            <a href="javascript:void(0);" class="dialog-handle add real"><span><i class="iconfont icon-bianji"></i> 设为实体</span></a>
+            <a href="javascript:void(0);" class="dialog-handle add virtual"><span><i class="iconfont icon-bianji"></i> 设为虚拟</span></a>
+        </p>        
+         <!--表格区域-->
+        <div class="table-box">
+            <table id="wktable">
+            </table>
+        </div>
+    </div>
+</div>
+
+<%- include("../components/footer") %>
