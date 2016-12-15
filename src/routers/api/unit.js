@@ -73,7 +73,7 @@ router.post("/reject", async (req, res, next) => {
 router.post("/setType", async (req, res, next) => {
     try {
         //调用proxy获取数据
-        let result = await unitPxy.setReal(req.app.locals.SOAParams);
+        let result = await unitPxy.setType(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
         Logger.error('uint Api==>setType:' + e);

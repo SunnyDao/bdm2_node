@@ -154,7 +154,7 @@ class Unit {
         let opt_data = {
             reqData: {
                 unitTypeDetailList: units,
-                type
+                unitType:type
             },
             cookies
         };
