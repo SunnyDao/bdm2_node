@@ -4,24 +4,29 @@
     "data": {
         "items": [
             {
-                "id": 1,
-                "text": "1号楼"
+                "buildingId": 1,
+                "buildingName": "1号楼",
+                "unitProperty":"1"
             },
             {
-                "id": 2,
-                "text": "2号楼"
+                "buildingId": 2,
+                "buildingName": "2号楼",
+                "unitProperty":"0"
             },
             {
-                "id": 3,
-                "text": "3号楼"
+                "buildingId": 3,
+                "buildingName": "3号楼",
+                "unitProperty":"1"
             },
             {
-                "id": 4,
-                "text": "4号楼"
+                "buildingId": 4,
+                "buildingName": "4号楼",
+                "unitProperty":"0"
             },
             {
-                "id": 5,
-                "text": "5号楼"
+                "buildingId": 5,
+                "buildingName": "5号楼",
+                "unitProperty":"1"
             }
         ]
     }
