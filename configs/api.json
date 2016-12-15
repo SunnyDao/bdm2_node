@@ -40,7 +40,7 @@
         "list":"houseRoom/list.do"
     },
     "unit": {
-        "list": "unit/list",
+        "list": "estateUnit/pageUnitListBy.do",
         "auditList":"estatebuild/queryVerifyBuildingList.do",
         "approve":"estatebuild/verifyEstateBuildingPass.do",
         "reject":"estatebuild/verifyEstateBuildingReject.do",

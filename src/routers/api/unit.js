@@ -26,6 +26,20 @@ router.get("/list", async (req, res, next) => {
 });
 
 /**
+ * desc:获取单元信息列表
+ */
+router.get("/auditList", async (req, res, next) => {
+    try {
+        //调用proxy获取数据
+        let result = await unitPxy.getList(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('uint Api==>getList:' + e);
+        next(e);
+    }
+});
+
+/**
  * desc:审核成功
  */
 router.post("/approve", async (req, res, next) => {

@@ -34,7 +34,7 @@ let listMap = {
             return result;
         },
     },
-    page: "pageInfo",
+    pageInfo: "pageInfo",
 }
 
 class UnitMapper {
