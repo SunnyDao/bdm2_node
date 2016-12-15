@@ -81,6 +81,19 @@ router.post("/setVirtual", async (req, res, next) => {
     }
 });
 
+/**
+ * desc:锁定
+ */
+router.post("/setLocked", async (req, res, next) => {
+    try {
+        //调用proxy获取数据
+        let result = await unitPxy.setLocked(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('uint Api==>setVirtual:' + e);
+        next(e);
+    }
+});
 
 module.exports = router;
 

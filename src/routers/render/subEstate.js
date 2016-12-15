@@ -37,8 +37,8 @@ router.get("/details", function (req, res, next) {
         req: req,
         matchJavascript: true,
         matchStylesheet: true,
-        extraJavascripts: ["wktable","moment"],
-        extraStylesheets: ["treeviewSelect", "wktable"]
+        extraJavascripts: ["wktable","daterangepicker","moment"],
+        extraStylesheets: ["treeviewSelect","daterangepicker","wktable"]
     }
 
     let templateData = routerUtil.getTemplateBasicData(param);
