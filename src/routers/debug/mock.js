@@ -161,4 +161,19 @@ router.post("/estatebuild/lock.do", (req, res, next) => {
 /**
  * ================================================Building Mock接口 Start====================================================
  */
+
+
+
+/**
+ * ================================================imgInof接口 Start====================================================
+ */
+//获取全部图片
+router.post("/imageInfo/getImgList.do", (req, res, next) => {
+    let pos = require("../../../json/imgInofList.json");
+    return res.json(pos);
+})
+//删除图片
+router.post("/imageInfo/deleteImg.do", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})
 module.exports = router;
