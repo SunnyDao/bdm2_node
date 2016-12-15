@@ -23,7 +23,7 @@ class SubEstateRoom {
      * @param  {} pageSize
      * @param  {} cookies
      */
-    async getRoomInfoList({buildingId, unitId, room, page, pageSize, cookies}) {
+    async getList({buildingId, unitId, room, page, pageSize, cookies}) {
         //页面查询参数
         let opt_data = {
             reqData: {
@@ -54,7 +54,7 @@ class SubEstateRoom {
      * @param  {} subEstateId 子划分id
      * @param  {} cookies
      */
-    async getBuildingsBySubEstateId({subEstateId, cookies}) {
+    async getBuildings({subEstateId, cookies}) {
         //页面查询参数
         let opt_data = {
             reqData: {
@@ -67,8 +67,7 @@ class SubEstateRoom {
             data: opt_data,
             soaOpt: {
                 moduleName: this.name,
-                actionName: "roomList",
-                converter: false,
+                actionName: "buildings",
                 method: "post"
             }
         }
@@ -82,7 +81,7 @@ class SubEstateRoom {
      * @param  {} buildingId 楼栋Id
      * @param  {} cookies
      */
-    async getUnitsBySubEstateIdAndBuildingId({subEstateId, buildingId, cookies}) {
+    async getUnits({subEstateId, buildingId, cookies}) {
         //页面查询参数
         let opt_data = {
             reqData: {
@@ -96,8 +95,7 @@ class SubEstateRoom {
             data: opt_data,
             soaOpt: {
                 moduleName: this.name,
-                actionName: "roomList",
-                converter: false,
+                actionName: "units",
                 method: "post"
             }
         }

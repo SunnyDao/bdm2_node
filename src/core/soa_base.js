@@ -22,7 +22,7 @@ class SOA_Base {
 
     }
 
-   
+
     /**
      * @param  {Object} {data:请求参数
      * @param  {soaOpt:soa请求参数
@@ -41,12 +41,10 @@ class SOA_Base {
         try {
             soa_opts = this.genOpts(data, { moduleName, actionName, json, method, encoding, contentType });
 
-            if (converter) {
-                //收到数据之后的转换
-                soa_opts.transform = ({status, message, data} = { status: 0, message: "SOA_Error", data: null }) => {
-                    return this.transform({ moduleName, actionName, converter }, { status, message, data });
-                };
-            }
+            //收到数据之后的转换
+            soa_opts.transform = ({status, message, data} = { status: 0, message: "SOA_Error", data: null }) => {
+                return this.transform({ moduleName, actionName, converter }, { status, message, data });
+            };
 
             //根据method判断发送相应请求
             let result = method.toLowerCase() == "get" ? await request.get(soa_opts) : await request.post(soa_opts);
@@ -124,17 +122,19 @@ class SOA_Base {
      */
     transform({moduleName, actionName, converter}, res) {
         try {
-            //获取converter function
-            let converterFn = this.getConverter({ moduleName, actionName, converter });
-
-            //记录response data
+            //记录original response data
             logger.info(`[${moduleName}_${actionName}_SOA_Respone]:${JSON.stringify(res)}`);
 
             //调用 beforeConverted 方法
             let {status, message, data} = this.beforeConverted(res.status, res.message, res.data);
 
-            if (_.isFunction(converterFn) && status && status.toString() === soaConf.successCode.toString()) {
-                data = converterFn(data);
+            if (converter) {
+                //获取converter function
+                let converterFn = this.getConverter({ moduleName, actionName, converter });
+
+                if (_.isFunction(converterFn) && status && status.toString() === soaConf.successCode.toString()) {
+                    data = converterFn(data);
+                }
             }
 
             return {

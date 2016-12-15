@@ -10,6 +10,7 @@ import appConfs from "../../configs/app.json";
 import apiConfs from "../../configs/api.json";
 import redisConfs from "../../configs/redis.json";
 import whiteList from "../../configs/whiteList.json";
+import Logger from './logger';
 
 /**
  * 获取阶段环境全局变量，这个变量的设置方法：
@@ -37,7 +38,13 @@ class Config {
      * @param  {} key
      */
     static getApi(name, key) {
-        return `${global.apiDomain}/${apiConfs[name][key]}`;
+        if (apiConfs[name]) {
+            return `${global.apiDomain}/${apiConfs[name][key]}`;
+        }
+        else {
+            Logger.error(`there is no ${name} api config in api.json,pls check`);
+            return null;
+        }
     }
 
     /**

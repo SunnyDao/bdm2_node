@@ -1,0 +1,33 @@
+{
+    "status": 1,
+    "message": "",
+    "data": {
+        "items": [
+            {
+                "buildingId": 1,
+                "buildingName": "1号楼",
+                "unitProperty":"1"
+            },
+            {
+                "buildingId": 2,
+                "buildingName": "2号楼",
+                "unitProperty":"0"
+            },
+            {
+                "buildingId": 3,
+                "buildingName": "3号楼",
+                "unitProperty":"1"
+            },
+            {
+                "buildingId": 4,
+                "buildingName": "4号楼",
+                "unitProperty":"0"
+            },
+            {
+                "buildingId": 5,
+                "buildingName": "5号楼",
+                "unitProperty":"1"
+            }
+        ]
+    }
+}
