@@ -95,24 +95,25 @@ router.get("/common/getEstateInfoByTownId.do",(req,res,next)=>{
 /**
  * ================================================UnitMock接口 Start====================================================
  */
-router.post("/unit/list", (req, res, next) => {
+router.post("/estateUnit/pageUnitListBy.do", (req, res, next) => {
     let pos = require("../../../json/unitList.json");
     return res.json(pos);
 })
 
-router.post("/unit/approve", (req, res, next) => {
+router.post("/estatebuild/queryVerifyBuildingList.do", (req, res, next) => {
+    let pos = require("../../../json/unitList.json");
+    return res.json(pos);
+})
+
+router.post("/estatebuild/verifyEstateBuildingPass.do", (req, res, next) => {
     return res.json({ status: 1, message: "", data: null });
 })
 
-router.post("/unit/reject", (req, res, next) => {
+router.post("/estatebuild/verifyEstateBuildingReject.do", (req, res, next) => {
     return res.json({ status: 1, message: "", data: null });
 })
 
-router.post("/unit/setReal", (req, res, next) => {
-    return res.json({ status: 1, message: "", data: null });
-})
-
-router.post("/unit/setVirtual", (req, res, next) => {
+router.post("/estateUnit/upUnitType.do", (req, res, next) => {
     return res.json({ status: 1, message: "", data: null });
 })
 
@@ -120,10 +121,44 @@ router.post("/unit/setVirtual", (req, res, next) => {
  * ================================================UnitMock接口 End====================================================
  */
 
+/**
+ * ================================================subEstateRoom接口 Start====================================================
+ */
+
 //获取子划分小区室号列表数据
 router.post("/houseRoom/list.do", (req, res, next) => {
     let pos = require("../../../json/subEstateRoomInfoList.json");
     return res.json(pos);
 })
+//获取子划分小区下楼栋名称数据
+router.post("/houseRoom/buildings.do", (req, res, next) => {
+    let pos = require("../../../json/subEstateBuildings.json");
+    return res.json(pos);
+})
 
+//获取指定子划分和楼栋下的单元名称数据
+router.post("/houseRoom/units.do", (req, res, next) => {
+    let pos = require("../../../json/subEstateUnits.json");
+    return res.json(pos);
+})
+
+/**
+ * ================================================subEstateRoom接口 End====================================================
+ */
+/**
+ * ================================================Building Mock接口 Start====================================================
+ */
+
+//获取子划分小区楼栋信息列表数据
+router.post("/estatebuild/list.do", (req, res, next) => {
+    let pos = require("../../../json/subEstateBuildingInfoList.json");
+    return res.json(pos);
+})
+//锁定解锁楼栋
+router.post("/estatebuild/lock.do", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})
+/**
+ * ================================================Building Mock接口 Start====================================================
+ */
 module.exports = router;
