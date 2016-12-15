@@ -120,10 +120,31 @@ router.post("/unit/setVirtual", (req, res, next) => {
  * ================================================UnitMock接口 End====================================================
  */
 
+/**
+ * ================================================subEstateRoom接口 Start====================================================
+ */
+
 //获取子划分小区室号列表数据
 router.post("/houseRoom/list.do", (req, res, next) => {
     let pos = require("../../../json/subEstateRoomInfoList.json");
     return res.json(pos);
 })
+
+//获取子划分小区下楼栋名称数据
+router.post("/houseRoom/buildings.do", (req, res, next) => {
+    let pos = require("../../../json/subEstateBuildings.json");
+    return res.json(pos);
+})
+
+//获取指定子划分和楼栋下的单元名称数据
+router.post("/houseRoom/units.do", (req, res, next) => {
+    let pos = require("../../../json/subEstateUnits.json");
+    return res.json(pos);
+})
+
+/**
+ * ================================================subEstateRoom接口 End====================================================
+ */
+
 
 module.exports = router;
