@@ -1,16 +1,23 @@
 <!--页面正文内容部分-->
-<div class="wrappers">
+<div class="wrappers subEstateRoom">
     <div class="data-panel">
         <!--查询区域-->
         <form class="search-section">
             <dl>
                 <dt>楼栋名称 ：</dt>
                 <dd>
-                    <select name="" id="selBuilding" class="form-control">
-                        <option value="0">全部</option>
-                        <option value="1">1楼</option>
-                        <option value="2">2楼</option>
-                    </select>
+                    <% if (data&&data.items&&data.items.length>1) { %>
+                        <select name="" id="selBuilding" class="form-control">
+                            <option value="0">全部</option>
+                            <%for(var i=0;i<data.items.length;i++){%>
+                                <option value="<%=data.items[i].id%>"><%=data.items[i].text%></option>
+                            <%}%>
+                        </select>
+                    <%}else{%>
+                        <select name="" id="selBuilding" class="form-control">
+                            <option value="0">全部</option>
+                        </select>
+                    <%}%> 
                 </dd>
             </dl>
             <dl>
@@ -26,7 +33,7 @@
             <dl>
                 <dt>室号 ：</dt>
                 <dd>
-                    <input type="text" class="form-control" id="publisher" placeholder="请输入室号" />
+                    <input type="text" class="form-control" id="txtRoom" placeholder="请输入室号" />
                 </dd>
             </dl>
             <button type="button" class="btn btn-primary btn-sm" id="btnSearch">查询</button>

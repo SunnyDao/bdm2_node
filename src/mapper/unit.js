@@ -10,62 +10,15 @@ import Logger from '../utils/logger';
 let itemMap = {
     unitId: "unitId",
     estateName: "estateName",
+    buildingId: "buildingId",
     buildingName: "buildingName",
     unitName: "unitName",
-    unitType: ["unitType", {
-        key: "unitTypeStr", transform: (value) => {
-            if (!value) return "--";
-            let str = "--";
-            switch (value) {
-                case 1:
-                    str = "实体";
-                    break;
-                case 2:
-                    str = "虚拟";
-                    break;
-                default:
-                    break;
-            }
-            return str;
-        }
-    }],
-    lockStatus: ["lockStatus", {
-        key: "lockStatusStr", transform: (value) => {
-            if (!value) return "--";
-            let str = "--";
-            switch (value) {
-                case 1:
-                    str = "锁定";
-                    break;
-                case 2:
-                    str = "未锁定";
-                    break;
-                default:
-                    break;
-            }
-            return str;
-        }
-    }],
-    status: ["status", {
-        key: "statusStr", transform: (value) => {
-            if (!value) return "--";
-            let str = "--";
-            switch (value) {
-                case 1:
-                    str = "待审核";
-                    break;
-                case 2:
-                    str = "通过";
-                    break;
-                case 3:
-                    str = "失败";
-                    break;
-                default:
-                    break;
-            }
-            return str;
-        }
-    }],
+    unitType: "unitType",
+    unitTypeStr: "unitTypeStr",
+    lockStatus: "lockStatus",
+    lockStatusStr: "lockStatusStr",
+    status: "status",
+    statusStr: "statusStr",
     createDateTime: "createDateTime",
 };
 
@@ -81,7 +34,7 @@ let listMap = {
             return result;
         },
     },
-    page: "pageInfo",
+    pageInfo: "pageInfo",
 }
 
 class UnitMapper {
