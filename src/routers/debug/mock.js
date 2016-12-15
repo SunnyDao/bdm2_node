@@ -127,3 +127,20 @@ router.post("/houseRoom/list.do", (req, res, next) => {
 })
 
 module.exports = router;
+
+/**
+ * ================================================UnitMock接口 End====================================================
+ */
+
+//获取子划分小区楼栋信息列表数据
+router.post("/estatebuild/list.do", (req, res, next) => {
+    let pos = require("../../../json/subEstateBuildingInfoList.json");
+    return res.json(pos);
+})
+
+module.exports = router;
+
+//锁定解锁楼栋
+router.post("/estatebuild/lock.do", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})

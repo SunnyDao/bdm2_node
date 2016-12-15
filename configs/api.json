@@ -39,8 +39,9 @@
     "subEstateRomm":{
         "list":"houseRoom/list.do"
     },
-     "subEstateBuildingInfo": {
-        "list": ""
+     "subEstateBuilding": {
+        "buildingList": "estatebuild/list.do",
+        "lock":"estatebuild/lock.do"
     },
     "unit": {
         "list": "unit/list",
