@@ -34,7 +34,8 @@
         "getCities":"common/getCity.do",
         "getDistricts":"common/list/simple.do",
         "getTowns":"common/townList.do",
-        "getEstatesByTownId":"common/getEstateInfoByTownId.do"
+        "getEstatesByTownId":"common/getEstateInfoByTownId.do",
+        "getFinishRecords":"dataprocess/perfectedHistory.do"
     },
     "subEstateRomm":{
         "list":"houseRoom/list.do"

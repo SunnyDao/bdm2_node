@@ -9,7 +9,6 @@ import routerUtil from "../../utils/router";
 
 let router = express.Router();
 
-
 /**
  * desc:小区子划分列表
  */
@@ -19,7 +18,7 @@ router.get("/list", function (req, res, next) {
         matchJavascript: true,
         matchStylesheet: true,
         extraJavascripts: ["wktable","select2","cascadingSelect2","moment","daterangepicker"],
-        extraStylesheets: ["treeviewSelect", "wktable","select2"]
+        extraStylesheets: ["treeviewSelect", "wktable","select2","daterangepicker"]
     }
 
     let templateData = routerUtil.getTemplateBasicData(param);
@@ -33,35 +32,35 @@ router.get("/list", function (req, res, next) {
  * desc:添加子划分对话框视图
  */
 router.get("/addDialogView", function (req, res, next) {
-    return res.render('subEstate/_addDialog', req);
+    return res.render('subEstate/_addDialog');
 })
 
 /**
  * desc:转移子划分对话框视图
  */
 router.get("/transferDialogView", function (req, res, next) {
-    return res.render('subEstate/_transferDialog', req);
+    return res.render('subEstate/_transferDialog');
 })
 
 /**
  * desc:标记对话框视图
  */
 router.get("/markDialogView", function (req, res, next) {
-    return res.render('subEstate/_markDialog', req);
+    return res.render('subEstate/_markDialog');
 })
 
 /**
  * desc:绑定学校对话框视图
  */
 router.get("/boundSchoolDialogView", function (req, res, next) {
-    return res.render('subEstate/_boundSchoolDialog', req);
+    return res.render('subEstate/_boundSchoolDialog');
 })
 
 /**
  * desc:完善情况对话框视图
  */
 router.get("/finishDialogView", function (req, res, next) {
-    return res.render('subEstate/_finishDialog', req);
+    return res.render('subEstate/_finishDialog');
 })
 /**
  * desc:子划分明细
@@ -91,7 +90,7 @@ router.get("/details", function (req, res, next) {
  * 基本信息
  */
 router.get('/baseInfoView', (req, res, next) => {
-    return res.render('subEstate/_baseInfo', req);
+    return res.render('subEstate/_baseInfo');
 });
 
 
@@ -100,14 +99,6 @@ router.get('/baseInfoView', (req, res, next) => {
  */
 router.get('/imageInfoView', (req, res, next) => {
     return res.render('subEstate/_imageInfo', req);
-});
-
-
-/**
- * 楼栋信息
- */
-router.get('/buildingInfoView', (req, res, next) => {
-    return res.render('subEstate/_buildingInfo', req);
 });
 
 /**
