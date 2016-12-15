@@ -50,7 +50,7 @@ router.get("/getCities", async (req, res, next) => {
         let result = await subEstatePxy.getCities(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subestate Api==>getSubEstateMark:' + e);
+        Logger.error('subestate Api==>getCities:' + e);
         next(e);
     }
 })
@@ -64,7 +64,7 @@ router.get("/getDistricts", async (req, res, next) => {
         let result = await subEstatePxy.getDistricts(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subestate Api==>getSubEstateMark:' + e);
+        Logger.error('subestate Api==>getDistricts:' + e);
         next(e);
     }
 })

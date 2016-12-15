@@ -95,24 +95,25 @@ router.get("/common/getEstateInfoByTownId.do",(req,res,next)=>{
 /**
  * ================================================UnitMock接口 Start====================================================
  */
-router.post("/unit/list", (req, res, next) => {
+router.post("/estateUnit/pageUnitListBy.do", (req, res, next) => {
     let pos = require("../../../json/unitList.json");
     return res.json(pos);
 })
 
-router.post("/unit/approve", (req, res, next) => {
+router.post("/estatebuild/queryVerifyBuildingList.do", (req, res, next) => {
+    let pos = require("../../../json/unitList.json");
+    return res.json(pos);
+})
+
+router.post("/estatebuild/verifyEstateBuildingPass.do", (req, res, next) => {
     return res.json({ status: 1, message: "", data: null });
 })
 
-router.post("/unit/reject", (req, res, next) => {
+router.post("/estatebuild/verifyEstateBuildingReject.do", (req, res, next) => {
     return res.json({ status: 1, message: "", data: null });
 })
 
-router.post("/unit/setReal", (req, res, next) => {
-    return res.json({ status: 1, message: "", data: null });
-})
-
-router.post("/unit/setVirtual", (req, res, next) => {
+router.post("/estateUnit/upUnitType.do", (req, res, next) => {
     return res.json({ status: 1, message: "", data: null });
 })
 

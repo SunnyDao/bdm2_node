@@ -42,10 +42,10 @@
         "units": "houseRoom/units.do"
     },
     "unit": {
-        "list": "unit/list",
-        "approve": "unit/approve",
-        "reject": "unit/reject",
-        "setReal": "unit/setReal",
-        "setVirtual": "unit/setVirtual"
+       "list": "estateUnit/pageUnitListBy.do",
+        "auditList":"estatebuild/queryVerifyBuildingList.do",
+        "approve":"estatebuild/verifyEstateBuildingPass.do",
+        "reject":"estatebuild/verifyEstateBuildingReject.do",
+        "setType":"estateUnit/upUnitType.do"
     }
 }
