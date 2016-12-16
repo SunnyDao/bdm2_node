@@ -64,17 +64,16 @@ class imageInfo{
     /**
      * 获取楼栋名称列表
      */
-    async getBuildingNameList({term,page,cookies}){
+    async getBuildingNameList({q,page,cookies}){
         console.log("----------------------------------------------------------------");
-        console.log(term);
+        console.log(q);
         console.log(page);
         console.log("----------------------------------------------------------------");
         //页面查询参数
         let opt_data = {
             reqData: {
-                page_limit:page_limit,
-                page:page,
-                pc_hash:pc_hash
+                q:q,
+                page:page
             },
             cookies
         };
