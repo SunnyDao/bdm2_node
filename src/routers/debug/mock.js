@@ -58,12 +58,6 @@ router.get("/estate/getSubestateComparePage.do",(req,res,next)=>{
     return res.json(pos);
 });
 
-//小区子划分标记
-router.get("/dataprocess/perfectedHistory.do",(req,res,next)=>{
-    let pos = require("../../../json/subEstateMark.json");
-    return res.json(pos);
-});
-
 //获取城市
 router.get("/common/getCity.do",(req,res,next)=>{
     let pos = require("../../../json/getCities.json");
@@ -85,6 +79,55 @@ router.get("/common/townList.do",(req,res,next)=>{
 //获取小区
 router.get("/common/getEstateInfoByTownId.do",(req,res,next)=>{
     let pos = require("../../../json/getEstates.json");
+    return res.json(pos);
+});
+
+//删除子划分
+router.get("/dataprocess/deleteEstateSubList.do",(req,res,next)=>{
+    //let pos = require("../../../json/getEstates.json");
+    return res.json({status:"1"});
+});
+
+
+//删除子划分
+router.get("/dataprocess/mergeSubCascade.do",(req,res,next)=>{
+    //let pos = require("../../../json/getEstates.json");
+    return res.json({status:"1"});
+});
+
+//删除子划分
+router.get("/dataprocess/addEstateSubInfo.do",(req,res,next)=>{
+    //let pos = require("../../../json/getEstates.json");
+    return res.json({status:"1"});
+});
+
+//标记子划分
+router.get("/estate/saveSubestateCompare.do",(req,res,next)=>{
+    //let pos = require("../../../json/getEstates.json");
+    return res.json({status:"1"});
+});
+
+//解锁/锁定子划分
+router.get("/dataprocess/lockEstateSub.do",(req,res,next)=>{
+    //let pos = require("../../../json/getEstates.json");
+    return res.json({status:"1"});
+});
+
+//获取绑定学校接口
+router.get("/estate/getEstateSchoolList.do",(req,res,next)=>{
+    let pos = require("../../../json/getBoundSchools.json");
+    return res.json(pos);
+});
+
+//完善子划分
+router.post("/dataprocess/perfected.do",(req,res,next)=>{
+    //let pos = require("../../../json/getFinishRecords.json");
+    return res.json({status:1});
+});
+
+//
+router.get("/dataprocess/perfectedHistory.do",(req,res,next)=>{
+    let pos = require("../../../json/getFinishRecords.json");
     return res.json(pos);
 });
 
@@ -161,4 +204,19 @@ router.post("/estatebuild/lock.do", (req, res, next) => {
 /**
  * ================================================Building Mock接口 Start====================================================
  */
+
+
+
+/**
+ * ================================================imgInof接口 Start====================================================
+ */
+//获取全部图片
+router.post("/imageInfo/getImgList.do", (req, res, next) => {
+    let pos = require("../../../json/imgInofList.json");
+    return res.json(pos);
+})
+//删除图片
+router.post("/imageInfo/deleteImg.do", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})
 module.exports = router;

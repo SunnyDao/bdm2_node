@@ -31,10 +31,10 @@ router.get("/list", async (req, res, next) => {
 router.get("/auditList", async (req, res, next) => {
     try {
         //调用proxy获取数据
-        let result = await unitPxy.getList(req.app.locals.SOAParams);
+        let result = await unitPxy.getAuditList(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('uint Api==>getList:' + e);
+        Logger.error('uint Api==>auditList:' + e);
         next(e);
     }
 });
