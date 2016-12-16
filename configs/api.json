@@ -48,7 +48,8 @@
     },
     "imageInfo":{
         "getImgList":"imageInfo/getImgList.do",
-        "deleteImg":"imageInfo/deleteImg.do"
+        "deleteImg":"imageInfo/deleteImg.do",
+        "getBuildingNameList":"imageInfo/getBuildingNameList.do"
     },
     "unit": {
        "list": "estateUnit/pageUnitListBy.do",

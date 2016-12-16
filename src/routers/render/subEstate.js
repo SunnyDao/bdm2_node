@@ -74,8 +74,8 @@ router.get("/details", function(req, res, next) {
         req: req,
         matchJavascript: true,
         matchStylesheet: true,
-        extraJavascripts: ["wktable", "moment"],
-        extraStylesheets: ["treeviewSelect", "wktable"]
+        extraJavascripts: ["wktable", "moment","daterangepicker","select2"],
+        extraStylesheets: ["treeviewSelect","daterangepicker","wktable", "select2"]
     }
 
     let templateData = routerUtil.getTemplateBasicData(param);
@@ -104,7 +104,12 @@ router.get('/baseInfoView', (req, res, next) => {
 router.get('/imageInfoView', (req, res, next) => {
     return res.render('subEstate/_imageInfo', req);
 });
-
+/**
+ * 图片上传对话框
+ */
+router.get('/imageUpload', (req, res, next) => {
+    return res.render('subEstate/_imageUpload', req);
+});
 /**
  * 单元信息
  */
