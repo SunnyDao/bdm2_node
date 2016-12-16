@@ -211,6 +211,7 @@ class SubEstate {
                 moduleName: this.name,
                 actionName: "finishSubEstate",
                 converter: false,
+                method:"post"
             }
         }
         return await bdmService.request(this.options);
@@ -336,6 +337,24 @@ class SubEstate {
             soaOpt: {
                 moduleName: this.name,
                 actionName: "getEstatesByTownId",
+                converter: false,
+            }
+        }
+        return await bdmService.request(this.options);
+    }
+
+    async getFinishRecords({subEstateId,page,pageSize,cookies}) {
+        //页面查询参数
+        let opt_data = {
+            reqData: { subEstateId,page,pageSize },
+            cookies
+        };
+        //请求参数
+        this.options = {
+            data: opt_data,
+            soaOpt: {
+                moduleName: this.name,
+                actionName: "getFinishRecords",
                 converter: false,
             }
         }
