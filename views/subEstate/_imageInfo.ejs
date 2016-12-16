@@ -1,1 +1,55 @@
-<div>图片信息</div>
+ <div class="data-panel">
+    <form class="search-section top-gap" >
+        <dl>
+            <dt>图片类型:</dt>
+            <dd>
+                <select class="form-control" id="imgType">
+                    <option value="all">全部</option>
+                    <option value="projectMap">项目位置图</option>
+                    <option value="buildingMap">楼栋位置图</option>
+                    <option value="storeyMap">楼层平面图</option>
+                    <option value="landscapeMap">小区景观图</option>
+                    <option value="planMap">小区平面图</option>
+                    <option value="facilitiesMap">周边配套设施图</option>
+                    <option value="houseTypeMap">房型图</option>
+                    <option value="other">其他</option>
+                </select>
+            </dd>
+        </dl> 
+        <dl>
+            <dd>
+                <button type="button" class="btn btn-default" id="find">查找</button>
+            </dd>
+        </dl>
+        <dl>
+            <dd>
+                <label for="add" class="btn btn-default" role="button">添加</label>
+                <input type="file" id="add" multiple style="display:none;"/>
+            </dd>
+        </dl>
+        <dl>
+            <dd>
+                <button type="button" class="btn btn-default" id="delete">删除</button>
+            </dd>
+        </dl> 
+    </form>
+    <div id="imgBox">
+        <%
+        for(var i=0;i<100;i++){
+        %>
+        <div class="imgList" data-imgType="projectMap" data-id="<%= i%>">
+            <a href="http://bpic.588ku.com/element_origin_min_pic/16/11/21/fa5f7b2970403cb1fa1fc87b56d8f2df.jpg" target="_blank">
+                <img class="img-rounded" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgdmlld0JveD0iMCAwIDE0MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxkZWZzLz48cmVjdCB3aWR0aD0iMTQwIiBoZWlnaHQ9IjE0MCIgZmlsbD0iI0VFRUVFRSIvPjxnPjx0ZXh0IHg9IjQ1LjUiIHk9IjcwIiBzdHlsZT0iZmlsbDojQUFBQUFBO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1mYW1pbHk6QXJpYWwsIEhlbHZldGljYSwgT3BlbiBTYW5zLCBzYW5zLXNlcmlmLCBtb25vc3BhY2U7Zm9udC1zaXplOjEwcHQ7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+MTQweDE0MDwvdGV4dD48L2c+PC9zdmc+" data-holder-rendered="true">
+            </a>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Check me out
+                </label>
+            </div>
+        </div>
+        <%
+        }
+        %>
+        <div style="clear: both;"></div>
+    </div>
+</div>

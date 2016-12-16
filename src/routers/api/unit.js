@@ -26,6 +26,20 @@ router.get("/list", async (req, res, next) => {
 });
 
 /**
+ * desc:获取单元信息列表
+ */
+router.get("/auditList", async (req, res, next) => {
+    try {
+        //调用proxy获取数据
+        let result = await unitPxy.getList(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('uint Api==>getList:' + e);
+        next(e);
+    }
+});
+
+/**
  * desc:审核成功
  */
 router.post("/approve", async (req, res, next) => {
@@ -54,43 +68,15 @@ router.post("/reject", async (req, res, next) => {
 });
 
 /**
- * desc:设为实体
+ * desc:设为实体或虚拟
  */
-router.post("/setReal", async (req, res, next) => {
+router.post("/setType", async (req, res, next) => {
     try {
         //调用proxy获取数据
-        let result = await unitPxy.setReal(req.app.locals.SOAParams);
+        let result = await unitPxy.setType(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('uint Api==>setReal:' + e);
-        next(e);
-    }
-});
-
-/**
- * desc:设为虚拟
- */
-router.post("/setVirtual", async (req, res, next) => {
-    try {
-        //调用proxy获取数据
-        let result = await unitPxy.setVirtual(req.app.locals.SOAParams);
-        return res.json(result);
-    } catch (e) {
-        Logger.error('uint Api==>setVirtual:' + e);
-        next(e);
-    }
-});
-
-/**
- * desc:锁定
- */
-router.post("/setLocked", async (req, res, next) => {
-    try {
-        //调用proxy获取数据
-        let result = await unitPxy.setLocked(req.app.locals.SOAParams);
-        return res.json(result);
-    } catch (e) {
-        Logger.error('uint Api==>setVirtual:' + e);
+        Logger.error('uint Api==>setType:' + e);
         next(e);
     }
 });

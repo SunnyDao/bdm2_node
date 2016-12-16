@@ -15,12 +15,12 @@ let subEstateRoomPxy = ModuleFactory.createProxy("subEstateRoom");
 /**
  * 根据子划分id,获取室号详情列表
  */
-router.get("/getRoomInfoList", async (req, res, next) => {
+router.get("/getList", async (req, res, next) => {
     try {
-        let result = await subEstateRoomPxy.getRoomInfoList(req.app.locals.SOAParams);
+        let result = await subEstateRoomPxy.getList(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subEstateRoom Api==>getRoomInfoList:' + e);
+        Logger.error('subEstateRoom Api==>getList:' + e);
         next(e);
     }
 })
@@ -28,12 +28,12 @@ router.get("/getRoomInfoList", async (req, res, next) => {
 /**
  * 根据子划分id,获取全部的楼栋名称信息
  */
-router.get("getBuildingsBySubEstateId", async (req, res, next) => {
+router.get("/getBuildings", async (req, res, next) => {
     try {
-        let result = await subEstateRoomPxy.getBuildingsBySubEstateId(req.app.locals.SOAParams);
+        let result = await subEstateRoomPxy.getBuildings(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subEstateRoom Api==>getBuildingsBySubEstateId:' + e);
+        Logger.error('subEstateRoom Api==>getBuildings:' + e);
         next(e);
     }
 });
@@ -41,12 +41,12 @@ router.get("getBuildingsBySubEstateId", async (req, res, next) => {
 /**
  * 根据子划分id和楼栋Id,获取全部的单元信息
  */
-router.get("getUnitsBySubEstateIdAndBuildingId", async (req, res, next) => {
+router.get("/getUnits", async (req, res, next) => {
     try {
-        let result = await subEstateRoomPxy.getUnitsBySubEstateIdAndBuildingId(req.app.locals.SOAParams);
+        let result = await subEstateRoomPxy.getUnits(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subEstateRoom Api==>getUnitsBySubEstateIdAndBuildingId:' + e);
+        Logger.error('subEstateRoom Api==>getUnits:' + e);
         next(e);
     }
 });

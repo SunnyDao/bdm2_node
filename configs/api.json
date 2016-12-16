@@ -8,9 +8,9 @@
     "prefix": "api",
     "estate": {
         "list": "estateSubEdit/getEstateSubEditListByCondition.do",
-        "details":"estateSubEdit/getEstateSubEditDetail.do",
-        "pass":"estateSubEdit/pushEstateSub.do",
-        "reject":"estateSubEdit/dotPass.do"
+        "details": "estateSubEdit/getEstateSubEditDetail.do",
+        "pass": "estateSubEdit/pushEstateSub.do",
+        "reject": "estateSubEdit/dotPass.do"
     },
     "common": {
         "wksso": "user/getCurrentUser.action",
@@ -19,31 +19,40 @@
     },
     "subEstate": {
         "list": "estate/subEstate/list.do",
-        "getSubEstateMark":"estate/getSubestateComparePage.do",
-        "deleteSubEstate":"dataprocess/deleteEstateSubList.do",
-        "lockSubEstate":"dataprocess/lockEstateSub.do",
-        "unlockSubEstate":"dataprocess/lockEstateSub.do",
-        "addSubEstate":"dataprocess/addEstateSubInfo.do",
-        "transferSubEstate":"dataprocess/mergeSubCascade.do",
-        "updateSubEstate":"dataprocess/updateEstateSubCasecad.do",
-        "getSubEstateById":"dataprocess/getEstateSubById.do",
-        "finishSubEstate":"dataprocess/perfected.do",
-        "getBoundSchool":"estate/getEstateSchoolList.do",
-        "markSubEstate":"estate/saveSubestateCompare.do",
-        "getCountries":"common/getCountry.do",
-        "getCities":"common/getCity.do",
-        "getDistricts":"common/list/simple.do",
-        "getTowns":"common/townList.do",
-        "getEstatesByTownId":"common/getEstateInfoByTownId.do"
+        "getSubEstateMark": "estate/getSubestateComparePage.do",
+        "deleteSubEstate": "dataprocess/deleteEstateSubList.do",
+        "lockSubEstate": "dataprocess/lockEstateSub.do",
+        "unlockSubEstate": "dataprocess/lockEstateSub.do",
+        "addSubEstate": "dataprocess/addEstateSubInfo.do",
+        "transferSubEstate": "dataprocess/mergeSubCascade.do",
+        "updateSubEstate": "dataprocess/updateEstateSubCasecad.do",
+        "getSubEstateById": "dataprocess/getEstateSubById.do",
+        "finishSubEstate": "dataprocess/perfected.do",
+        "getBoundSchool": "estate/getEstateSchoolList.do",
+        "markSubEstate": "estate/saveSubestateCompare.do",
+        "getCountries": "common/getCountry.do",
+        "getCities": "common/getCity.do",
+        "getDistricts": "common/list/simple.do",
+        "getTowns": "common/townList.do",
+        "getEstatesByTownId": "common/getEstateInfoByTownId.do"
     },
-    "subEstateRomm":{
-        "list":"houseRoom/list.do"
+    "subEstateRoom": {
+        "list": "houseRoom/list.do",
+        "buildings": "estateUnit/getBuldListBySubEstId.do",
+        "units": "houseRoom/units.do"
+    },
+     "subEstateBuilding": {
+        "buildingList": "estatebuild/list.do",
+        "lock":"estatebuild/lock.do"
+    },
+    "subEstateImg":{
+        
     },
     "unit": {
-        "list": "unit/list",
-        "approve":"unit/approve",
-        "reject":"unit/reject",
-        "setReal":"unit/setReal",
-        "setVirtual":"unit/setVirtual"
+       "list": "estateUnit/pageUnitListBy.do",
+        "auditList":"estatebuild/queryVerifyBuildingList.do",
+        "approve":"estatebuild/verifyEstateBuildingPass.do",
+        "reject":"estatebuild/verifyEstateBuildingReject.do",
+        "setType":"estateUnit/upUnitType.do"
     }
 }
