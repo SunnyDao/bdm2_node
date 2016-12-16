@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <button class="close" data-dismiss="modal">&times;</button>
+  <h4>上传图片</h4>
+</div>
+<div class="modal-body">
+  <form class="form-inline" role="form">
+    <div class="form-group">
+      <p class="form-control-static">图片类型:</p>
+    </div>
+    <div class="form-group">
+      <select class="form-control" id="selectFileType">
+        <option value="" selected="selected">请选择</option>
+        <option value="projectMap">项目位置图</option>
+        <option value="buildingMap">楼栋位置图</option>
+        <option value="storeyMap">楼层平面图</option>
+        <option value="landscapeMap">小区景观图</option>
+        <option value="planMap">小区平面图</option>
+        <option value="facilitiesMap">周边配套设施图</option>
+        <option value="houseTypeMap">房型图</option>
+        <option value="other">其他buildingName</option>
+      </select>
+    </div>
+
+    <div class="form-group ">
+      <p class="form-control-static">楼栋名称:</p>
+    </div>
+    <div class="form-group ">
+      <select class="form-control" id="building" style="width:150px;"></select>
+    </div>
+
+    <label for="fileInput" id="selectImgButton" class="btn btn-default" role="button" disabled="disabled">选择图片</label>
+    <input type="file" id="fileInput" multiple style="display:none;"/>
+    <button type="button" class="btn btn-default" disabled="disabled" id="confirm">确定上传</button>
+    <button type="button" class="btn btn-default" disabled="disabled" id="cancel">取消上传</button>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary">确定</button>
+  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+</div>

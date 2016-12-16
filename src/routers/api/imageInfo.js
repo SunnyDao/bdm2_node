@@ -37,4 +37,18 @@ router.post("/deleteImg", async (req, res, next) => {
         next(e);
     }
 })
+
+/**
+ * 获取楼栋名称列表
+ */
+router.post("/getBuildingNameList", async (req, res, next) => {
+    try {
+        //调用proxy获取数据
+        let result = await imageInfoPxy.getBuildingNameList(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('subestate Api==>getList:' + e);
+        next(e);
+    }
+})
 module.exports = router;

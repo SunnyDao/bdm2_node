@@ -60,6 +60,35 @@ class imageInfo{
         }
         return await bdmService.request(this.options);
     }
+
+    /**
+     * 获取楼栋名称列表
+     */
+    async getBuildingNameList({q,page,cookies}){
+        console.log("----------------------------------------------------------------");
+        console.log(q);
+        console.log(page);
+        console.log("----------------------------------------------------------------");
+        //页面查询参数
+        let opt_data = {
+            reqData: {
+                q:q,
+                page:page
+            },
+            cookies
+        };
+        //请求参数
+        this.options = {
+            data: opt_data,
+            soaOpt: {
+                moduleName: this.name,
+                actionName: "getBuildingNameList",
+                converter: false,
+                method: "post"
+            }
+        }
+        return await bdmService.request(this.options);
+    }
 }
 
 export default imageInfo;
