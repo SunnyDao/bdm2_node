@@ -110,7 +110,12 @@ router.get('/baseInfoView',async (req, res, next) => {
 router.get('/imageInfoView', (req, res, next) => {
     return res.render('subEstate/_imageInfo', req);
 });
-
+/**
+ * 图片上传对话框
+ */
+router.get('/imageUpload', (req, res, next) => {
+    return res.render('subEstate/_imageUpload', req);
+});
 /**
  * 单元信息
  */
