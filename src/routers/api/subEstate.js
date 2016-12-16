@@ -9,6 +9,7 @@ import ModuleFactory from '../../core/factory';
 
 
 let router = express.Router();
+let subEstatePxy = ModuleFactory.createProxy("subEstate");
 
 /**
  * 获取小区子划分列表
@@ -194,6 +195,28 @@ router.get("/getFinishRecords", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getFinishRecords:' + e);
+        next(e);
+    }
+})
+
+router.get("/getSubEstateById", async (req, res, next) => {
+    try {
+        //调用proxy获取数据
+        let result = await subEstatePxy.getSubEstateById(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('subestate Api==>getSubEstateById:' + e);
+        next(e);
+    }
+})
+
+router.post("/updateSubEstate", async (req, res, next) => {
+    try {
+        //调用proxy获取数据
+        let result = await subEstatePxy.updateSubEstate(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('subestate Api==>updateSubEstate:' + e);
         next(e);
     }
 })

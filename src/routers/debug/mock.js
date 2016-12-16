@@ -131,6 +131,17 @@ router.get("/dataprocess/perfectedHistory.do",(req,res,next)=>{
     return res.json(pos);
 });
 
+//
+router.get("/dataprocess/getEstateSubById.do",(req,res,next)=>{
+    let pos = require("../../../json/subEstateDetail.json");
+    return res.json(pos);
+});
+
+
+router.post("/dataprocess/updateEstateSubCasecad.do",(req,res,next)=>{
+    //let pos = require("../../../json/subEstateDetail.json");
+    return res.json({status:1});
+});
 /**
  * ================================================小区列表Mock接口 End====================================================
  */

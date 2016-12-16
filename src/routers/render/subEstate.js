@@ -11,7 +11,7 @@ import ModuleFactory from '../../core/factory';
 let router = express.Router();
 
 let subEstateRoomPxy = ModuleFactory.createProxy("subEstateRoom");
-
+let subEstatePxy = ModuleFactory.createProxy("subEstate");
 
 /**
  * desc:小区子划分列表
@@ -74,13 +74,13 @@ router.get("/details", function(req, res, next) {
         req: req,
         matchJavascript: true,
         matchStylesheet: true,
-        extraJavascripts: ["wktable", "moment"],
-        extraStylesheets: ["treeviewSelect", "wktable"]
+        extraJavascripts: ["wktable", "moment","daterangepicker","select2","cascadingSelect2"],
+        extraStylesheets: ["treeviewSelect", "wktable","daterangepicker","select2"]
     }
 
     let templateData = routerUtil.getTemplateBasicData(param);
 
-    Object.assign(templateData, { "title": "小区子划分明细", "id": req.body.id });
+    Object.assign(templateData, { "title": "小区子划分明细", "subEstateId": req.query.subEstateId });
 
     return res.render("subEstate/details", templateData);
 })
@@ -93,8 +93,14 @@ router.get("/details", function(req, res, next) {
 /**
  * 基本信息
  */
-router.get('/baseInfoView', (req, res, next) => {
-    return res.render('subEstate/_baseInfo');
+router.get('/baseInfoView',async (req, res, next) => {
+    try {              
+        return res.render('subEstate/_baseInfo');
+    }
+    catch (e) {
+        logger.error('subEstate baseInfoView==>:' + e);
+        next(e);
+    }    
 });
 
 
