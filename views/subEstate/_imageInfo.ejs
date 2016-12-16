@@ -23,8 +23,11 @@
         </dl>
         <dl>
             <dd>
+                <!--
                 <label for="add" class="btn btn-default" role="button">添加</label>
                 <input type="file" id="add" multiple style="display:none;"/>
+                -->
+                <input type="file" id="uploadImg" class="btn btn-default" role="button">
             </dd>
         </dl>
         <dl>
@@ -35,6 +38,7 @@
     </form>
     <div id="imgBox">
         <%
+        //upload-modal.ejs
         for(var i=0;i<100;i++){
         %>
         <div class="imgList" data-imgType="projectMap" data-id="<%= i%>">
@@ -53,3 +57,4 @@
         <div style="clear: both;"></div>
     </div>
 </div>
+<%- include("../components/upload-modal") %>
