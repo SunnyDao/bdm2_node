@@ -1,5 +1,5 @@
 <form class="validate" action="">
-        <input type="hidden" name="id" />
+        <input type="hidden" name="id" value="" />
         <div class="row">
             <div class="col-xs-4">
                 <input type="checkbox" checked name="type" class=""/>
@@ -7,7 +7,13 @@
             </div>
         </div>
         <br/>
-        <div class="row">            
+        <div class="row">    
+            <div class="col-xs-2">
+                <label>小区介绍:</label>
+            </div>        
+            <div class="col-xs-12">
+                <textarea name="subEstateMemo" class="form-control" rows="4"></textarea>
+            </div>
             <div class="col-xs-2 text-right">
                 <label>所属城市<span class="text-danger">*</span>：</label>
             </div>
@@ -57,7 +63,7 @@
                 <label>小区子划分别名：</label>
             </div>
             <div class="col-xs-2">
-                <input type="text" class="form-control" name="subEstateAlias" />
+                <input type="text" class="form-control" name="subAliasName" />
             </div>
 
             <div class="col-xs-2 text-right">
@@ -89,7 +95,7 @@
                 <label>总栋数<span class="text-danger">*</span>：</label>
             </div>
             <div class="col-xs-2 text-right">
-                <input type="text" class="form-control" placeholder="请输入数字" name="totalBuilding" data-validation-engine="validate[required,custom[integer]]" />
+                <input type="text" class="form-control" placeholder="请输入数字" name="totalBuild" data-validation-engine="validate[required,custom[integer]]" />
             </div>
 
             <div class="col-xs-2 text-right">
@@ -111,7 +117,7 @@
                 <label>入住年份（年）：</label>
             </div>
             <div class="col-xs-2">
-                <input type="text" class="form-control" name="getIn" data-validation-engine="validate[custom[integer],min[1000],max[3000]]" placeholder="请输入1000-3000以内的数值" />
+                <input type="text" class="form-control" name="liveYear" data-validation-engine="validate[custom[integer],min[1000],max[3000]]" placeholder="请输入1000-3000以内的数值" />
             </div>
 
             <div class="col-xs-2 text-right">

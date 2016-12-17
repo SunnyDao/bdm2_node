@@ -5,10 +5,10 @@
     <div class="op">
         <button type="button" class="btn btn-default" id="btnBack">返回</button>
     </div>
-    <input type="hidden" id="id" value="<%= id%>" />
+    <input type="hidden" id="subEstatedId" name="subEstateId" value="<%= subEstateId%>" />
     <div class="tab-wrapper tabs">
             <ul class="tabs-handle">
-                <li class="on" data-href="/subEstate/baseInfoView"><a href="javascript:;">基本信息</a></li>
+                <li class="on" data-href="/subEstate/baseInfoView?id=<%= subEstateId%>"><a href="javascript:;">基本信息</a></li>
                 <li data-href="/subEstate/imageInfoView"><a href="javascript:;">图片信息</a></li>
                 <li data-href="/subEstateBuilding/list"><a href="javascript:;">楼栋信息</a></li>
                 <li data-href="/subEstate/unitInfoView"><a href="javascript:;">单元信息</a></li>

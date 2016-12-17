@@ -176,10 +176,11 @@ class Unit {
      * @param  {IntegerArray} {ids:小区id
      * @param  {} cookies}
      */
-    async setLocked({ids, type, cookies}) {
+    async setLockStatus({ids, status, cookies}) {
         let opt_data = {
             reqData: {
-                ids
+                ids,
+                status
             },
             cookies
         };
@@ -188,7 +189,7 @@ class Unit {
             data: opt_data,
             soaOpt: {
                 moduleName: this.name,
-                actionName: "setLocked",
+                actionName: "setLockStatus",
                 method: "post"
             }
         };

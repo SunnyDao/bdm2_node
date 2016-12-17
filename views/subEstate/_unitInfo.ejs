@@ -1,6 +1,10 @@
 <div class="wrappers">
     <div class="data-panel">
         <form class="search-section">
+            <div style="margin-bottom:15px;">
+                <button type="button" class="btn btn-primary btn-sm" id="entityBtn">设为实体</button>  
+                <button type="reset" class="btn btn-primary btn-sm" id="virtualBtn">设为虚体</button>
+            </div>
             <dl>
                 <dt>楼栋名称：</dt>
                 <dd>
@@ -36,6 +40,8 @@
                 <dt>创建日期：</dt>
                 <dd>
                     <input type="text" class="form-control" id="unitInfo_CreateDate"/>
+                    <input type="hidden" name="payStartDate"/>
+                    <input type="hidden" name="payEndDate"/>
                 </dd>
             </dl>
             <button type="button" class="btn btn-primary btn-sm" id="btnSearch">搜索</button>
