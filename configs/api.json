@@ -56,6 +56,7 @@
         "auditList":"estatebuild/queryVerifyBuildingList.do",
         "approve":"estatebuild/verifyEstateBuildingPass.do",
         "reject":"estatebuild/verifyEstateBuildingReject.do",
-        "setType":"estateUnit/upUnitType.do"
+        "setType":"estateUnit/upUnitType.do",
+        "setLockStatus":"/estateUnit/upLockStatus.do"
     }
 }

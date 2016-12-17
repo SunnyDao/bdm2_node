@@ -235,4 +235,14 @@ router.post("/imageInfo/getBuildingNameList.do", (req, res, next) => {
     let data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
     return res.json({ status: 1, message: "", data: data });
 })
+
+
+/*
+ *   单元信息接口
+*/
+router.post("/estateUnit/upLockStatus.do", (req, res, next) => {
+    return res.json({ status: 1, message: "", data: null });
+})
+
+
 module.exports = router;

@@ -81,6 +81,20 @@ router.post("/setType", async (req, res, next) => {
     }
 });
 
+/**
+ * desc:设为实体或虚拟
+ */
+router.post("/setLockStatus", async (req, res, next) => {
+    try {
+        //调用proxy获取数据
+        let result = await unitPxy.setLockStatus(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('uint Api==>setLockStatus:' + e);
+        next(e);
+    }
+});
+
 module.exports = router;
 
 
