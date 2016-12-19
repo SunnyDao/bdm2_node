@@ -232,7 +232,7 @@ router.post("/imageInfo/deleteImg.do", (req, res, next) => {
 })
 //获取楼栋名称列表
 router.post("/imageInfo/getBuildingNameList.do", (req, res, next) => {
-    let data = [{ id: 0, text: 'enhancement' }, { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }];
+    let data = [ { id: 1, text: 'bug' }, { id: 2, text: 'duplicate' }, { id: 3, text: 'invalid' }, { id: 4, text: 'wontfix' }, { id: 5, text: 'enhancement' }];
     return res.json({ status: 1, message: "", data: data });
 })
 module.exports = router;
