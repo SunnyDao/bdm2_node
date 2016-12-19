@@ -76,7 +76,13 @@ class BDM_SOA extends SOA_Base {
     beforeConverted(s, m, d) {
         let {status, message, data} = super.beforeConverted(s, m, d);
 
-        //如果有配置sessionExpireCode则进行登陆信息过期处理
+         //未登录情况下，调用接口sso会直接跳转到登录页面。以下逻辑处理返回登录信息过期。
+        if (!status) {
+            status = soaConf.sessionExpireCode;
+            message = "登陆信息过期";
+        }
+
+        //已登录情况下，session过期处理逻辑。如果有配置sessionExpireCode则进行登陆信息过期处理
         if (soaConf.sessionExpireCode && _.isString(data)) {
             let value = JSON.parse(data);
             if (value.hasOwnProperty("messageNo") && value.messageNo.toString() === soaConf.sessionExpireCode.toString()) {
