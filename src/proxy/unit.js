@@ -170,6 +170,33 @@ class Unit {
 
         return await bdmService.request(options);
     }
+
+    /**
+     * desc:设置单元锁定状态（锁定或解锁）
+     * @param  {IntegerArray} {ids:小区id
+     * @param  {} cookies}
+     */
+    async setLockStatus({ids, status, cookies}) {
+        let opt_data = {
+            reqData: {
+                ids,
+                status
+            },
+            cookies
+        };
+
+        let options = {
+            data: opt_data,
+            soaOpt: {
+                moduleName: this.name,
+                actionName: "setLockStatus",
+                method: "post"
+            }
+        };
+
+        return await bdmService.request(options);
+    }
+    
 }
 
 export default Unit;

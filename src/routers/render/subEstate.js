@@ -116,6 +116,7 @@ router.get('/imageInfoView', (req, res, next) => {
 router.get('/imageUpload', (req, res, next) => {
     return res.render('subEstate/_imageUpload', req);
 });
+
 /**
  * 单元信息
  */
