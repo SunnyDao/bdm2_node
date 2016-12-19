@@ -46,7 +46,8 @@ class BDM_SOA extends SOA_Base {
                 //设置请求头cookie
                 soa_opts.headers = {
                     cookie: cookieArray.join(';'),
-                    "Content-Type": contentType
+                    "Content-Type": contentType,
+                    "X-Requested-With": "xmlHttpRequest"
                 };
             }
             else {
