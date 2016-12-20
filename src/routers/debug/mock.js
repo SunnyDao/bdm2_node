@@ -180,7 +180,7 @@ router.post("/estateUnit/upUnitType.do", (req, res, next) => {
  */
 
 //获取子划分小区室号列表数据
-router.post("/houseRoom/list.do", (req, res, next) => {
+router.post("/houseRoom/getHouseRoomListByCity.do", (req, res, next) => {
     let pos = require("../../../json/subEstateRoomInfoList.json");
     return res.json(pos);
 })
@@ -191,7 +191,7 @@ router.post("/estateUnit/getBuldListBySubEstId.do", (req, res, next) => {
 })
 
 //获取指定子划分和楼栋下的单元名称数据
-router.post("/houseRoom/units.do", (req, res, next) => {
+router.post("/estateUnit/getUnitNameByBuildingId.do", (req, res, next) => {
     let pos = require("../../../json/subEstateUnits.json");
     return res.json(pos);
 })

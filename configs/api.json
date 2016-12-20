@@ -38,9 +38,9 @@
         "getFinishRecords":"dataprocess/perfectedHistory.do"
     },
     "subEstateRoom": {
-        "list": "houseRoom/list.do",
+        "list": "houseRoom/getHouseRoomListByCity.do",
         "buildings": "estateUnit/getBuldListBySubEstId.do",
-        "units": "houseRoom/units.do"
+        "units": "estateUnit/getUnitNameByBuildingId.do"
     },
      "subEstateBuilding": {
         "buildingList": "estatebuild/list.do",
