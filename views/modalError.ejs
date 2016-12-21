@@ -1,0 +1,14 @@
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">&times;</button><h4></h4>
+    </div>
+    <div class="modal-body">
+        <h1><%= message %></h1>
+        <h2><%= error.status %></h2>
+        <%if(error.stack){%>
+            <pre><%= error.stack %></pre>
+        <%}%>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" data-dismiss="modal">关闭</button>
+    </div>
+

@@ -136,7 +136,7 @@ router.get('/roomInfoView', async (req, res, next) => {
     }
     catch (e) {
         logger.error('subEstate roomInfoView==>:' + e);
-        next(e);
+        next(e.render);
     }
 });
 

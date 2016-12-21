@@ -19,6 +19,24 @@ app.use(function (req, res, next) {
 
 // error handlers
 
+//处理请求SOA错误
+app.use(function (err, req, res, next) {
+  switch (err.name) {
+    case "ApiError":
+      return res.json(JSON.parse(err.message));
+    case "RenderError":
+      return res.render('error', {
+        message: err.message,
+        error: err
+      });
+    case "ModalError":
+      return res.render('modalError', {
+        message: err.message,
+      });
+  }
+  next(err);
+});
+
 // development error handler
 // will print stacktrace
 if (app.get('stage_env') === 'dev') {

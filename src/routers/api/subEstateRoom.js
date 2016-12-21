@@ -21,7 +21,7 @@ router.get("/getList", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subEstateRoom Api==>getList:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -34,7 +34,7 @@ router.get("/getBuildings", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subEstateRoom Api==>getBuildings:' + e);
-        next(e);
+        next(e.api);
     }
 });
 
@@ -47,7 +47,7 @@ router.get("/getUnits", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subEstateRoom Api==>getUnits:' + e);
-        next(e);
+        next(e.api);
     }
 });
 

@@ -17,7 +17,7 @@ let listItem = {
     "unitName": "unitName",
     "room": "room",
     "floor": "floor",
-    "cityId": "cityId",
+    "cityId": "cityId?",
     "createTime": "createTime"
 }
 

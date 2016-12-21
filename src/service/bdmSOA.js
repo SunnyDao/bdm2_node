@@ -7,6 +7,7 @@ import SOA_Base from '../core/soa_base';
 import sslReader from '../utils/sslReader';
 import config from '../utils/config';
 import _ from 'lodash';
+import { ApiError, RenderError, ModalError } from '../core/error';
 
 
 const env = process.env.STAGE_ENV;
@@ -91,6 +92,43 @@ class BDM_SOA extends SOA_Base {
             message,
             data
         }
+    }
+
+
+    /**
+     * @desc 重写request,对于status!=0,统一出错处理
+     * @param  {} data
+     * @param  {{moduleName} soaOpt
+     * @param  {} actionName
+     * @param  {} method="get"
+     * @param  {} json=true
+     * @param  {} contentType="application/json"
+     * @param  {} encoding
+     * @param  {} converter=true
+     */
+    async request({data, soaOpt: { moduleName, actionName, method = "get", json = true, contentType = "application/json", encoding, converter = true}}) {
+        let options = {
+            data,
+            soaOpt: {
+                moduleName,
+                actionName,
+                method,
+                json,
+                contentType,
+                encoding,
+                converter
+            }
+        }
+        let result = await super.request(options);
+        if (result.status.toString() != soaConf.successCode) {
+            let message = JSON.stringify(result);
+            let err = new Error(message);
+            err.api = new ApiError(message);
+            err.render = new RenderError(message);
+            err.modal = new ModalError(message);
+            throw err;
+        }
+        return result;
     }
 }
 

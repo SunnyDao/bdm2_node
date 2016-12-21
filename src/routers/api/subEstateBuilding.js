@@ -17,13 +17,13 @@ let subEstateBuildingPxy = ModuleFactory.createProxy("subEstateBuilding");
 /**
  * 获取楼栋详情列表
  */
-router.get("/getBuildingInfoList", async (req, res, next) => { 
+router.get("/getBuildingInfoList", async (req, res, next) => {
     try {
         let result = await subEstateBuildingPxy.getBuildingInfoList(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
         Logger.error('subEstateBuilding Api==>getBuildingInfoList:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -31,13 +31,13 @@ router.get("/getBuildingInfoList", async (req, res, next) => {
 /**
  * 解锁锁定
  */
-router.post("/lock", async (req, res, next) => { 
+router.post("/lock", async (req, res, next) => {
     try {
         let result = await subEstateBuildingPxy.lock(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
         Logger.error('subEstateBuilding Api==>lock:' + e);
-        next(e);
+        next(e.api);
     }
 })
 

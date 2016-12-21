@@ -21,7 +21,7 @@ router.get("/getList", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getList:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -36,7 +36,7 @@ router.get("/getSubEstateMark", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getSubEstateMark:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -51,7 +51,7 @@ router.get("/getCities", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getCities:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -65,7 +65,7 @@ router.get("/getDistricts", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getDistricts:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -79,7 +79,7 @@ router.get("/getTowns", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getSubEstateMark:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -93,7 +93,7 @@ router.get("/getEstatesByTownId", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getSubEstateMark:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -104,7 +104,7 @@ router.get("/deleteSubEstate", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getSubEstateMark:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -115,7 +115,7 @@ router.post("/transferSubEstate", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getSubEstateMark:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -127,7 +127,7 @@ router.post("/addSubEstate", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getSubEstateMark:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -138,7 +138,7 @@ router.post("/markSubEstate", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getSubEstateMark:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -149,7 +149,7 @@ router.get("/unlockSubEstate", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>unlockSubEstate:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -161,7 +161,7 @@ router.get("/lockSubEstate", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>unlockSubEstate:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -172,7 +172,7 @@ router.get("/getBoundSchool", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getBoundSchool:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -184,7 +184,7 @@ router.post("/finishSubEstate", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>finishSubEstate:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -195,7 +195,7 @@ router.get("/getFinishRecords", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getFinishRecords:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -206,7 +206,7 @@ router.get("/getSubEstateById", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getSubEstateById:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -217,7 +217,7 @@ router.post("/updateSubEstate", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>updateSubEstate:' + e);
-        next(e);
+        next(e.api);
     }
 })
 module.exports = router;
