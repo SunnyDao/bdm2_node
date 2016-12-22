@@ -5,30 +5,30 @@
                 <button type="button" class="btn btn-primary btn-sm" id="entityBtn">设为实体</button>  
                 <button type="reset" class="btn btn-primary btn-sm" id="virtualBtn">设为虚体</button>
             </div>
-            <dl>
+            <dl style="margin-right:10px;">
                 <dt>楼栋名称：</dt>
                 <dd>
-                    <select class="form-control" id="status" style="min-width:200px">
+                    <select class="form-control" id="unitName" style="min-width:200px;">
                         <option value="全部">全部</option>
                         <option value="锁定">锁定</option>
                         <option value="未锁定">未锁定</option>
                     </select>
                 </dd>
             </dl>
-            <dl>
+            <dl style="margin-right:10px;">
                 <dt>锁定状态：</dt>
                 <dd>
-                    <select class="form-control" id="unitStatus" style="min-width:200px">
+                    <select class="form-control" id="unitStatus" style="min-width:200px;">
                         <option value="全部">全部</option>
                         <option value="锁定">锁定</option>
                         <option value="未锁定">未锁定</option>
                     </select>
                 </dd>
             </dl>
-            <dl>
+            <dl style="margin-right:10px;">
                 <dt>单元类型：</dt>
                 <dd>
-                    <select class="form-control" id="unitStyle" style="min-width:200px">
+                    <select class="form-control" id="unitStyle" style="min-width:200px;">
                         <option value="">请选择</option>
                         <option value="待审核">待审核</option>
                         <option value="未通过">未通过</option>
@@ -36,12 +36,10 @@
                     </select>
                 </dd>
             </dl>
-            <dl>
+            <dl style="margin-right:10px;">
                 <dt>创建日期：</dt>
                 <dd>
-                    <input type="text" class="form-control" id="unitInfo_CreateDate"/>
-                    <input type="hidden" name="payStartDate"/>
-                    <input type="hidden" name="payEndDate"/>
+                    <input type="text" class="form-control" id="unitInfo_CreateDate" style="min-width:200px;"/><input type="hidden" name="payStartDate" id='unitInfo_Start'/><input type="hidden" name="payEndDate" id='unitInfo_end'/>
                 </dd>
             </dl>
             <button type="button" class="btn btn-primary btn-sm" id="btnSearch">搜索</button>
