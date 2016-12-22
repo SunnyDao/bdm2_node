@@ -4,24 +4,19 @@
     "data": {
         "items": [
             {
-                "id": 1,
-                "text": "11单元"
+                "unitName": "11单元"
             },
             {
-                "id": 2,
-                "text": "22单元"
+                "unitName": "22单元"
             },
             {
-                "id": 3,
-                "text": "33单元"
+                "unitName": "33单元"
             },
             {
-                "id": 4,
-                "text": "44单元"
+                "unitName": "44单元"
             },
             {
-                "id": 5,
-                "text": "55单元"
+                "unitName": "55单元"
             }
         ]
     }

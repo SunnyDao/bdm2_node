@@ -1,4 +1,19 @@
 {
-  "presets": ["es2015", "stage-2","stage-3"] ,
-  "plugins": ["transform-runtime"]
+  "presets": [
+    "es2015",
+    "stage-2",
+    "stage-3"
+  ],
+  "plugins": [
+    "transform-runtime",
+    [
+      "babel-plugin-transform-builtin-extend",
+      {
+        "globals": [
+          "Error"
+        ],
+        "approximate": true
+      }
+    ]
+  ]
 }

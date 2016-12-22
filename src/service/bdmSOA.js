@@ -7,6 +7,7 @@ import SOA_Base from '../core/soa_base';
 import sslReader from '../utils/sslReader';
 import config from '../utils/config';
 import _ from 'lodash';
+import { ApiError, RenderError, ModalError } from '../core/error';
 
 
 const env = process.env.STAGE_ENV;
@@ -45,7 +46,8 @@ class BDM_SOA extends SOA_Base {
                 //设置请求头cookie
                 soa_opts.headers = {
                     cookie: cookieArray.join(';'),
-                    //"Content-Type": contentType
+
+                    "X-Requested-With": "xmlHttpRequest"
                 };
             }
             else {
@@ -74,7 +76,7 @@ class BDM_SOA extends SOA_Base {
     beforeConverted(s, m, d) {
         let {status, message, data} = super.beforeConverted(s, m, d);
 
-        //如果有配置sessionExpireCode则进行登陆信息过期处理
+        //已登录情况下，session过期处理逻辑。如果有配置sessionExpireCode则进行登陆信息过期处理
         if (soaConf.sessionExpireCode && _.isString(data)) {
             let value = JSON.parse(data);
             if (value.hasOwnProperty("messageNo") && value.messageNo.toString() === soaConf.sessionExpireCode.toString()) {
@@ -88,6 +90,43 @@ class BDM_SOA extends SOA_Base {
             message,
             data
         }
+    }
+
+
+    /**
+     * @desc 重写request,对于status!=0,统一出错处理
+     * @param  {} data
+     * @param  {{moduleName} soaOpt
+     * @param  {} actionName
+     * @param  {} method="get"
+     * @param  {} json=true
+     * @param  {} contentType="application/json"
+     * @param  {} encoding
+     * @param  {} converter=true
+     */
+    async request({data, soaOpt: { moduleName, actionName, method = "get", json = true, contentType = "application/json", encoding, converter = true}}) {
+        let options = {
+            data,
+            soaOpt: {
+                moduleName,
+                actionName,
+                method,
+                json,
+                contentType,
+                encoding,
+                converter
+            }
+        }
+        let result = await super.request(options);
+        if (result.status.toString() != soaConf.successCode) {
+            let message = JSON.stringify(result);
+            let err = new Error(message);
+            err.api = new ApiError(message);
+            err.render = new RenderError(message);
+            err.modal = new ModalError(message);
+            throw err;
+        }
+        return result;
     }
 }
 

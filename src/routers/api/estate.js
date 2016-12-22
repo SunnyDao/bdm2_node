@@ -20,7 +20,7 @@ router.get("/getList", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('estate Api==>getList:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -35,7 +35,7 @@ router.get("/getDetails", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('estate Api==>getDetails:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -48,7 +48,7 @@ router.post("/pass", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('estate Api==>pass:' + e);
-        next(e);
+        next(e.api);
     }
 });
 
@@ -61,7 +61,7 @@ router.post("/reject", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('estate Api==>reject:' + e);
-        next(e);
+        next(e.api);
     }
 })
 

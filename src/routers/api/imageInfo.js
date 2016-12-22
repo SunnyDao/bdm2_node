@@ -20,7 +20,7 @@ router.get("/getImgList", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getList:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -34,7 +34,7 @@ router.post("/deleteImg", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getList:' + e);
-        next(e);
+        next(e.api);
     }
 })
 
@@ -48,7 +48,7 @@ router.post("/getBuildingNameList", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('subestate Api==>getList:' + e);
-        next(e);
+        next(e.api);
     }
 })
 module.exports = router;

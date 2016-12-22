@@ -21,7 +21,7 @@ router.get("/list", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('uint Api==>getList:' + e);
-        next(e);
+        next(e.api);
     }
 });
 
@@ -35,7 +35,7 @@ router.get("/auditList", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('uint Api==>auditList:' + e);
-        next(e);
+        next(e.api);
     }
 });
 
@@ -49,7 +49,7 @@ router.post("/approve", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('uint Api==>approve:' + e);
-        next(e);
+        next(e.api);
     }
 });
 
@@ -63,7 +63,7 @@ router.post("/reject", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('uint Api==>reject:' + e);
-        next(e);
+        next(e.api);
     }
 });
 
@@ -77,7 +77,7 @@ router.post("/setType", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('uint Api==>setType:' + e);
-        next(e);
+        next(e.api);
     }
 });
 
@@ -91,7 +91,7 @@ router.post("/setLockStatus", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('uint Api==>setLockStatus:' + e);
-        next(e);
+        next(e.api);
     }
 });
 

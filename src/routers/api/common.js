@@ -21,7 +21,7 @@ router.get("/getCityAll", async (req, res, next) => {
         return res.json(result);
     } catch (e) {
         Logger.error('Common Api==>getCityAll:' + e);
-        next(e);
+        next(e.api);
     }
 });
 

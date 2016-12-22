@@ -41,7 +41,6 @@ class SubEstateRoom {
             soaOpt: {
                 moduleName: this.name,
                 actionName: "list",
-                converter: false,
                 method: "post"
             }
         }
@@ -81,11 +80,10 @@ class SubEstateRoom {
      * @param  {} buildingId 楼栋Id
      * @param  {} cookies
      */
-    async getUnits({subEstateId, buildingId, cookies}) {
+    async getUnits({buildingId, cookies}) {
         //页面查询参数
         let opt_data = {
             form: {
-                subEstateId,
                 buildingId
             },
             cookies
