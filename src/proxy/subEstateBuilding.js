@@ -32,7 +32,7 @@ class subEstateBuilding {
     async getBuildingInfoList({subestateId, buildingNumber, buildingName, itudeid, lockStatus, hasHouse, unitflag, sort, sortType, page, pageSize, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 subestateId,
                 buildingNumber,
                 buildingName,
@@ -54,7 +54,7 @@ class subEstateBuilding {
                 moduleName: this.name,
                 actionName: "buildingList",
                 converter: false,
-                method: "post"
+                method: "post",                
             }
         }
         return await bdmService.request(this.options);
@@ -70,7 +70,7 @@ class subEstateBuilding {
     async lock({id, status,cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 id,
                 status
             },

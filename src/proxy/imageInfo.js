@@ -14,10 +14,13 @@ class imageInfo{
     /**
      * @desc 获取全部图片列表
      */
-    async getList({cookies}){
+    async getList({subEstateId,type,cookies}){
         //页面查询参数
         let opt_data = {
-            reqData: {},
+            form: {
+                subEstateId,
+                type
+            },
             cookies
         };
         //请求参数
@@ -38,12 +41,9 @@ class imageInfo{
      * 删除图片
      */
     async deleteImg({ids,cookies}){
-        //console.log("----------------------------------------------------------------");
-        //console.log(ids);
-        //console.log("----------------------------------------------------------------");
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 ids:ids
             },
             cookies
@@ -65,13 +65,9 @@ class imageInfo{
      * 获取楼栋名称列表
      */
     async getBuildingNameList({q,page,cookies}){
-        console.log("----------------------------------------------------------------");
-        console.log(q);
-        console.log(page);
-        console.log("----------------------------------------------------------------");
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 q:q,
                 page:page
             },

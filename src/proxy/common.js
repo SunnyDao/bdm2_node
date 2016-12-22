@@ -5,7 +5,7 @@
 
 import ModuleFactory from '../core/factory';
 
-let bdmService = ModuleFactory.createService("bdmSOA"); 
+let bdmService = ModuleFactory.createService("bdmSOA");
 
 class Common {
     constructor() {
@@ -19,11 +19,10 @@ class Common {
      * @param  {Integer} max
      * @param  {Object} cookies}
      */
-    async getArea(userId, {min, max, cookies}) {
+    async getArea({min, max, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
-                userId: userId,
+            qs: {
                 min,
                 max
             },

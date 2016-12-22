@@ -26,7 +26,7 @@ class SubEstateRoom {
     async getList({buildingId, unitId, room, page, pageSize, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 buildingId,
                 unitId,
                 room,
@@ -57,7 +57,7 @@ class SubEstateRoom {
     async getBuildings({subEstateId, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 subEstateId
             },
             cookies
@@ -84,7 +84,7 @@ class SubEstateRoom {
     async getUnits({subEstateId, buildingId, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 subEstateId,
                 buildingId
             },

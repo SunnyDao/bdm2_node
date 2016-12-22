@@ -27,10 +27,9 @@ class BDM_SOA extends SOA_Base {
      * @param  {String} actionName:方法名称
      * @param  {String} method
      * @param  {Boolean} json
-     * @param  {String} contentType="application/json"
      */
-    genOpts(data, {moduleName, actionName, json, method, encoding, contentType}) {
-        let soa_opts = super.genOpts(data, { moduleName, actionName, json, method, encoding, contentType });
+    genOpts(data, {moduleName, actionName, json, method, encoding}) {
+        let soa_opts = super.genOpts(data, { moduleName, actionName, json, method, encoding });
 
         let cookies = data.cookies;
         let cookieArray = [];
@@ -46,7 +45,7 @@ class BDM_SOA extends SOA_Base {
                 //设置请求头cookie
                 soa_opts.headers = {
                     cookie: cookieArray.join(';'),
-                    "Content-Type": contentType
+                    //"Content-Type": contentType
                 };
             }
             else {
@@ -65,7 +64,6 @@ class BDM_SOA extends SOA_Base {
 
         if (soa_opts.body && soa_opts.body.cookies) delete soa_opts.body.cookies;
         if (soa_opts.qs && soa_opts.qs.cookies) delete soa_opts.qs.cookies;
-
         return soa_opts;
     }
 

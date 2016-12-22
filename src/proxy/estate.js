@@ -28,7 +28,7 @@ class Estate {
     async getList({estateName, subEstateId, publishName, checkStatus, cityId, districtId, townId, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 estateName,
                 subEstateId,
                 publishName,
@@ -60,7 +60,7 @@ class Estate {
     async getDetails({id, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            qs: {
                 id
             },
             cookies
@@ -72,7 +72,6 @@ class Estate {
                 moduleName: this.name,
                 actionName: "details",
                 converter: false,
-                method: "post"
             }
         }
         return await bdmService.request(this.options);
@@ -87,7 +86,7 @@ class Estate {
     async pass({id, checkNote, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 id,
                 checkNote
             },
@@ -115,7 +114,7 @@ class Estate {
     async reject({id, checkNote, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: {
+            form: {
                 id,
                 checkNote
             },

@@ -17,7 +17,7 @@ let commonPxy = ModuleFactory.createProxy("common");
 router.get("/getCityAll", async (req, res, next) => {
     try {
         //调用proxy获取数据
-        let result = await commonPxy.getArea(req.session.user.id, req.app.locals.SOAParams);
+        let result = await commonPxy.getArea(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
         Logger.error('Common Api==>getCityAll:' + e);

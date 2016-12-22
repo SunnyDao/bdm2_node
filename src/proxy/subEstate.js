@@ -35,7 +35,7 @@ class SubEstate {
     async getList({cityId, districtId, townId, contour, point, id, chooseId, lockStatus, hasPic, hasHouse, hasBuild, newhouse, estateName, cityName, page, pageSize, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { cityId, districtId, townId, contour, point, id, chooseId, lockStatus, hasPic, hasHouse, hasBuild, newhouse, estateName, cityName, page, pageSize },
+            form: { cityId, districtId, townId, contour, point, id, chooseId, lockStatus, hasPic, hasHouse, hasBuild, newhouse, estateName, cityName, page, pageSize },
             cookies
         };
         //请求参数
@@ -45,7 +45,7 @@ class SubEstate {
                 moduleName: this.name,
                 actionName: "list",
                 converter: false,
-                method: "post"
+                method: "post",
             }
         }
         return await bdmService.request(this.options);
@@ -59,7 +59,7 @@ class SubEstate {
     async getSubEstateMark({subId, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { subId },
+            qs: { subId },
             cookies
         };
         //请求参数
@@ -83,7 +83,7 @@ class SubEstate {
     async deleteSubEstate({idstr, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { idstr },
+            form: { idstr },
             cookies
         };
         //请求参数
@@ -92,7 +92,8 @@ class SubEstate {
             soaOpt: {
                 moduleName: this.name,
                 actionName: "deleteSubEstate",
-                converter: false
+                converter: false,
+                method:"post"
             }
         }
         return await bdmService.request(this.options);
@@ -107,7 +108,7 @@ class SubEstate {
     async lockSubEstate({id,lockStatus, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { id,lockStatus },
+            qs: { id,lockStatus },
             cookies
         };
         //请求参数
@@ -116,7 +117,7 @@ class SubEstate {
             soaOpt: {
                 moduleName: this.name,
                 actionName: "lockSubEstate",
-                converter: false
+                converter: false,                
             }
         }
         return await bdmService.request(this.options);
@@ -130,7 +131,7 @@ class SubEstate {
     async unlockSubEstate({id,lockStatus, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { id,lockStatus },
+            qs: { id,lockStatus },
             cookies
         };
         //请求参数
@@ -197,7 +198,7 @@ class SubEstate {
      async addSubEstate({id,type,newhouse,cityId,suptownid,townid,estateId,estateName,initName,subEstateName,number,roomRule,lockStatus,completed,propertyRight,totalHouse,developers,developers_phone,propertyType,propertyCharges,propertyCompany,propertyPhone,volumeRate, greenRate,totalFloorage,parkingLot,traffic,businessCycle,bank,hospital,park,openTime, saleAddress, salePhone,launchTime,planRoom,hasCooperation,buildDecoration,floorArea,startSpace,endSpace,startTotalPrice,endTotalPrice,groundCarSpace,undergroundCarSpace, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { id,type,newhouse,cityId,suptownid,townid,estateId,estateName,initName,subEstateName,number,roomRule,lockStatus,completed,propertyRight,totalHouse,developers,developers_phone,propertyType,propertyCharges,propertyCompany,propertyPhone,volumeRate, greenRate,totalFloorage,parkingLot,traffic,businessCycle,bank,hospital,park,openTime, saleAddress, salePhone,launchTime,planRoom,hasCooperation,buildDecoration,floorArea,startSpace,endSpace,startTotalPrice,endTotalPrice,groundCarSpace,undergroundCarSpace },
+            form: { id,type,newhouse,cityId,suptownid,townid,estateId,estateName,initName,subEstateName,number,roomRule,lockStatus,completed,propertyRight,totalHouse,developers,developers_phone,propertyType,propertyCharges,propertyCompany,propertyPhone,volumeRate, greenRate,totalFloorage,parkingLot,traffic,businessCycle,bank,hospital,park,openTime, saleAddress, salePhone,launchTime,planRoom,hasCooperation,buildDecoration,floorArea,startSpace,endSpace,startTotalPrice,endTotalPrice,groundCarSpace,undergroundCarSpace },
             cookies
         };
         //请求参数
@@ -206,7 +207,8 @@ class SubEstate {
             soaOpt: {
                 moduleName: this.name,
                 actionName: "addSubEstate",
-                converter: false
+                converter: false,
+                method:"post"
             }
         }
         return await bdmService.request(this.options);
@@ -224,7 +226,7 @@ class SubEstate {
     async transferSubEstate({id,cityId,districtId,townId,estateId,estateName, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { id,cityId,districtId,townId,estateId,estateName },
+            form: { id,cityId,districtId,townId,estateId,estateName },
             cookies
         };
         //请求参数
@@ -234,6 +236,7 @@ class SubEstate {
                 moduleName: this.name,
                 actionName: "transferSubEstate",
                 converter: false,
+                method:"post"               
             }
         }
         return await bdmService.request(this.options);
@@ -291,7 +294,7 @@ class SubEstate {
     async updateSubEstate({id,type,newhouse,cityId,suptownid,townid,estateId,estateName,initName,subEstateName,number,roomRule,lockStatus,completed,propertyRight,totalHouse,developers,developers_phone,propertyType,propertyCharges,propertyCompany,propertyPhone,volumeRate, greenRate,totalFloorage,parkingLot,traffic,businessCycle,bank,hospital,park,openTime, saleAddress, salePhone,launchTime,planRoom,hasCooperation,buildDecoration,floorArea,startSpace,endSpace,startTotalPrice,endTotalPrice,groundCarSpace,undergroundCarSpace, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { id,type,newhouse,cityId,suptownid,townid,estateId,estateName,initName,subEstateName,number,roomRule,lockStatus,completed,propertyRight,totalHouse,developers,developers_phone,propertyType,propertyCharges,propertyCompany,propertyPhone,volumeRate, greenRate,totalFloorage,parkingLot,traffic,businessCycle,bank,hospital,park,openTime, saleAddress, salePhone,launchTime,planRoom,hasCooperation,buildDecoration,floorArea,startSpace,endSpace,startTotalPrice,endTotalPrice,groundCarSpace,undergroundCarSpace },
+            form: { id,type,newhouse,cityId,suptownid,townid,estateId,estateName,initName,subEstateName,number,roomRule,lockStatus,completed,propertyRight,totalHouse,developers,developers_phone,propertyType,propertyCharges,propertyCompany,propertyPhone,volumeRate, greenRate,totalFloorage,parkingLot,traffic,businessCycle,bank,hospital,park,openTime, saleAddress, salePhone,launchTime,planRoom,hasCooperation,buildDecoration,floorArea,startSpace,endSpace,startTotalPrice,endTotalPrice,groundCarSpace,undergroundCarSpace },
             cookies
         };
         //请求参数
@@ -315,7 +318,7 @@ class SubEstate {
     async getSubEstateById({id, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { id },
+            qs: { id },
             cookies
         };
         //请求参数
@@ -324,7 +327,7 @@ class SubEstate {
             soaOpt: {
                 moduleName: this.name,
                 actionName: "getSubEstateById",
-                converter: false,
+                converter: false                
             }
         }
         return await bdmService.request(this.options);
@@ -342,7 +345,7 @@ class SubEstate {
     async finishSubEstate({perfectStatus,tags,channel,subEstateId,note, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { perfectStatus,tags,channel,subEstateId,note },
+            form: { perfectStatus,tags,channel,subEstateId,note },
             cookies
         };
         //请求参数
@@ -366,7 +369,7 @@ class SubEstate {
     async getBoundSchool({subEstateId, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { subEstateId },
+            qs: { subEstateId },
             cookies
         };
         //请求参数
@@ -393,7 +396,7 @@ class SubEstate {
     async markSubEstate({id,subestateId,chooseId,checked,descript, cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { id,subestateId,chooseId,checked,descript },
+            qs: { id,subestateId,chooseId,checked,descript },
             cookies
         };
         //请求参数
@@ -459,7 +462,7 @@ class SubEstate {
     async getDistricts({parentId,cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { parentId },
+            qs: { parentId },
             cookies
         };
         //请求参数
@@ -483,7 +486,7 @@ class SubEstate {
     async getTowns({parentId,cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { parentId },
+            qs: { parentId },
             cookies
         };
         //请求参数
@@ -507,7 +510,7 @@ class SubEstate {
     async getEstatesByTownId({townid,cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { townid },
+            qs: { townid },
             cookies
         };
         //请求参数
@@ -533,7 +536,7 @@ class SubEstate {
     async getFinishRecords({subEstateId,page,pageSize,cookies}) {
         //页面查询参数
         let opt_data = {
-            reqData: { subEstateId,page,pageSize },
+            qs: { subEstateId,page,pageSize },
             cookies
         };
         //请求参数

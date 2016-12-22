@@ -3,7 +3,7 @@ let router = express.Router();
 /**
  * desc:获取城市数据
  */
-router.get("/common/getCityAll", (req, res, next) => {
+router.get("/common/getCityAll.do", (req, res, next) => {
     let area = require("../../../json/area.json");
     return res.json(area);
 });

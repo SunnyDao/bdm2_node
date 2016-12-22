@@ -157,10 +157,10 @@ router.get("/unlockSubEstate", async (req, res, next) => {
 router.get("/lockSubEstate", async (req, res, next) => {
     try {
         //调用proxy获取数据
-        let result = await subEstatePxy.unlockSubEstate(req.app.locals.SOAParams);
+        let result = await subEstatePxy.lockSubEstate(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subestate Api==>unlockSubEstate:' + e);
+        Logger.error('subestate Api==>lockSubEstate:' + e);
         next(e);
     }
 })

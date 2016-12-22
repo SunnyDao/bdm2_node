@@ -30,16 +30,15 @@ class SOA_Base {
      * @param  {String} actionName:方法名称
      * @param  {String} method="get"
      * @param  {Boolean} json=true:返回数据是否转成json
-     * @param  {String} contentType="application/json"
      * @param  {String} encoding
      * @param  {Boolean|Object} converter=true|{mapperName:"xxx",mapperFunc:"yyy"}}}false:不对soa数据进行转换，true:根据moduleName和actionName找相应的mapper，object:根据mapperName和mapperFunc找相应的mapper
      */
-    async request({data, soaOpt: { moduleName, actionName, method = "get", json = true, contentType = "application/json", encoding, converter = true}}) {
+    async request({data, soaOpt: { moduleName, actionName, method = "get", json = true, encoding, converter = true}}) {
         //生成soa 请求options
         let soa_opts;
 
         try {
-            soa_opts = this.genOpts(data, { moduleName, actionName, json, method, encoding, contentType });
+            soa_opts = this.genOpts(data, { moduleName, actionName, json, method, encoding });
 
             //收到数据之后的转换
             soa_opts.transform = ({status, message, data} = { status: 0, message: "SOA_Error", data: null }) => {
@@ -66,9 +65,8 @@ class SOA_Base {
      * @param  {String} actionName:方法名称
      * @param  {String} method
      * @param  {Boolean} json
-     * @param  {String} contentType="application/json"
      */
-    genOpts(data, {moduleName, actionName, json, method, encoding, contentType}) {
+    genOpts(data, {moduleName, actionName, json, method, encoding}) {
         let soaConf = config.getSoaConf();
 
         let soa_opts = {};
@@ -85,13 +83,9 @@ class SOA_Base {
 
         soa_opts.method = method;
 
-        if (method.toLowerCase() == "get") {
-            soa_opts.qs = _.isPlainObject(data.reqData) ? _.omitBy(data.reqData, _.isUndefined) : data.reqData;
-        }
-        else {
-            soa_opts.body = _.isPlainObject(data.reqData) ? _.omitBy(data.reqData, _.isUndefined) : data.reqData;
-        }
-
+        if(data.qs) soa_opts.qs = _.isPlainObject(data.qs) ? _.omitBy(data.qs, _.isUndefined) : data.qs;
+        if(data.body) soa_opts.body =  _.isPlainObject(data.body) ? _.omitBy(data.body, _.isUndefined) : data.body;
+        if(data.form) soa_opts.form =  _.isPlainObject(data.form) ? _.omitBy(data.form, _.isUndefined) : data.form;
         //记录请求参数
         logger.info(`[${moduleName}_${actionName}_SOA_Request]:${JSON.stringify(soa_opts)}`);
 

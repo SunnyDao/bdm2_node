@@ -26,7 +26,7 @@ class Unit {
      */
     async getList({buildingId, lockStatus, unitType, createStartDate, createEndDate, pageIndex, pageSize, cookies}) {
         let opt_data = {
-            reqData: {
+            form: {
                 buildingId,
                 lockStatus,
                 unitType,
@@ -65,7 +65,7 @@ class Unit {
      */
     async getAuditList({cityId, unitId, estateName, buildingName, createStartDate, createEndDate, pageIndex, pageSize, cookies}) {
         let opt_data = {
-            reqData: {
+            form: {
                 cityId,
                 unitId,
                 estateName,
@@ -101,7 +101,7 @@ class Unit {
      */
     async approve({ids, cookies}) {
         let opt_data = {
-            reqData: {
+            form: {
                 ids
             },
             cookies
@@ -126,7 +126,7 @@ class Unit {
      */
     async reject({ids, cookies}) {
         let opt_data = {
-            reqData: {
+            form: {
                 ids
             },
             cookies
@@ -152,7 +152,7 @@ class Unit {
      */
     async setType({units, type, cookies}) {
         let opt_data = {
-            reqData: {
+            form: {
                 unitTypeDetailList: units,
                 unitType:type
             },
@@ -178,7 +178,7 @@ class Unit {
      */
     async setLockStatus({ids, status, cookies}) {
         let opt_data = {
-            reqData: {
+            form: {
                 ids,
                 status
             },

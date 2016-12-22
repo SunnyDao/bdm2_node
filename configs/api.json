@@ -1,11 +1,11 @@
 {
     "domain": {
-        "dev": "http://localhost:9005",
-        "test": "http://cp.sim.wkzf",
-        "sim": "http://cp.sim.wkzf",
-        "prod": "http://soa.express.me"
+        "dev": "https://yun2.dev.wkzf",
+        "test": "https://yun2.test.wkzf",
+        "sim": "https://yun2.sim.wkzf",
+        "prod": "https://yun2.wkzf.com"
     },
-    "prefix": "api",
+    "prefix": "bdm",
     "estate": {
         "list": "estateSubEdit/getEstateSubEditListByCondition.do",
         "details": "estateSubEdit/getEstateSubEditDetail.do",
@@ -13,9 +13,9 @@
         "reject": "estateSubEdit/dotPass.do"
     },
     "common": {
-        "wksso": "user/getCurrentUser.action",
-        "user": "user/getCurrentUser.action",
-        "area": "common/getCityAll"
+        "wksso": "common/getAccountInfo.do",
+        "user": "common/getAccountInfo.do",
+        "area": "common/getCityAll.do"
     },
     "subEstate": {
         "list": "estate/subEstate/list.do",
