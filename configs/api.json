@@ -47,8 +47,8 @@
         "lock":"estatebuild/lock.do"
     },
     "imageInfo":{
-        "getImgList":"imageInfo/getImgList.do",
-        "deleteImg":"imageInfo/deleteImg.do",
+        "getImgList":"estate/sub/image/list.do",
+        "deleteImg":"estate/sub/image/delete.do",
         "getBuildingNameList":"imageInfo/getBuildingNameList.do"
     },
     "unit": {

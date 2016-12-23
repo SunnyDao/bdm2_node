@@ -17,7 +17,7 @@ class imageInfo{
     async getList({subEstateId,type,cookies}){
         //页面查询参数
         let opt_data = {
-            form: {
+            qs: {
                 subEstateId,
                 type
             },
@@ -30,7 +30,7 @@ class imageInfo{
                 moduleName: this.name,
                 actionName: "getImgList",
                 converter: false,
-                method: "post"
+                //method: "post"
             }
         }
 

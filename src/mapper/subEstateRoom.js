@@ -43,38 +43,11 @@ let buildingItem = {
 };
 
 
-let buildingList = {
-    items: {
-        key: "items",
-        transform: (value) => {
-            if (!value) return null;
-            let result = []
-            for (let v of value) {
-                result.push(objectMapper(v, buildingItem));
-            }
-            return result;
-        }
-    }
-};
-
 let unitItem = {
-    unitName: "text"
+    unitName: "text",
+    unitId:"id"
 }
 
-
-let unitList = {
-    items: {
-        key: "items",
-        transform: (value) => {
-            if (!value) return null;
-            let result = []
-            for (let v of value) {
-                result.push(objectMapper(v, unitItem));
-            }
-            return result;
-        }
-    }
-};
 
 class SubEstateRoom {
 
@@ -96,7 +69,11 @@ class SubEstateRoom {
     */
     static buildings(src) {
         try {
-            return objectMapper(src, buildingList);
+            let result = []
+            for (let v of src) {
+                result.push(objectMapper(v, buildingItem));
+            }
+            return result;
         } catch (error) {
             Logger.error(`SubEstateRoom Mapper==>buildings:${error},src:${JSON.stringify(src)}`);
             return null;
@@ -109,7 +86,11 @@ class SubEstateRoom {
      */
     static units(src) {
         try {
-            return objectMapper(src, unitList);
+            let result = []
+            for (let v of src) {
+                result.push(objectMapper(v, unitItem));
+            }
+            return result;
         } catch (error) {
             Logger.error(`SubEstateRoom Mapper==>units:${error},src:${JSON.stringify(src)}`);
             return null;
