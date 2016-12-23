@@ -26,7 +26,7 @@ class Unit {
      */
     async getList({buildingId, lockStatus, unitType, createStartDate, createEndDate, pageIndex, pageSize, cookies}) {
         let opt_data = {
-            form: {
+            body: {
                 buildingId,
                 lockStatus,
                 unitType,

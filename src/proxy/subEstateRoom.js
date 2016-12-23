@@ -23,13 +23,13 @@ class SubEstateRoom {
      * @param  {} pageSize
      * @param  {} cookies
      */
-    async getList({id,buildingId, unitName, room, page, pageSize,sort,sortType, cookies}) {
+    async getList({id,buildingId, unitId, room, page, pageSize,sort,sortType, cookies}) {
         //页面查询参数
         let opt_data = {
             body: {
                 id,
                 buildingId,
-                unitName,
+                unitId,
                 room,
                 page,
                 pageSize,

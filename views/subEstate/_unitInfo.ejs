@@ -1,4 +1,4 @@
-<div class="wrappers">
+<div class="wrappers unit-info">
     <div class="data-panel">
         <form class="search-section">
             <div style="margin-bottom:15px;">
@@ -8,31 +8,37 @@
             <dl style="margin-right:10px;">
                 <dt>楼栋名称：</dt>
                 <dd>
-                    <select class="form-control" id="unitName" style="min-width:200px;">
-                        <option value="全部">全部</option>
-                        <option value="锁定">锁定</option>
-                        <option value="未锁定">未锁定</option>
-                    </select>
+                    <% if (data&&data.length>0) { %>
+                        <select name="" id="selBuilding" class="form-control" style="width:200px">
+                            <option value="0">请选择</option>
+                            <%for(var i=0;i<data.length;i++){%>
+                                <option value="<%=data[i].id%>" type="<%=data[i].type%>"><%=data[i].text%></option>
+                            <%}%>
+                        </select>
+                    <%}else{%>
+                        <select name="" id="selBuilding" class="form-control" style="width:200px">
+                            <option value="">请选择</option>
+                        </select>
+                    <%}%>
                 </dd>
             </dl>
             <dl style="margin-right:10px;">
                 <dt>锁定状态：</dt>
                 <dd>
                     <select class="form-control" id="unitStatus" style="min-width:200px;">
-                        <option value="全部">全部</option>
-                        <option value="锁定">锁定</option>
-                        <option value="未锁定">未锁定</option>
+                        <option value="">全部</option>
+                        <option value="1">锁定</option>
+                        <option value="0">未锁定</option>
                     </select>
                 </dd>
             </dl>
             <dl style="margin-right:10px;">
                 <dt>单元类型：</dt>
                 <dd>
-                    <select class="form-control" id="unitStyle" style="min-width:200px;">
+                    <select class="form-control" id="unitType" style="min-width:200px;">
                         <option value="">请选择</option>
-                        <option value="待审核">待审核</option>
-                        <option value="未通过">未通过</option>
-                        <option value="通过">通过</option>
+                        <option value="1">实体</option>
+                        <option value="2">虚拟</option>                        
                     </select>
                 </dd>
             </dl>
