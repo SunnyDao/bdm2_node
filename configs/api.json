@@ -50,7 +50,8 @@
         "getImgList":"estate/sub/image/list.do",
         "deleteImg":"estate/sub/image/delete.do",
         "uploadPic":"estate/sub/image/uploadPic.do",
-        "getBuldListBySubEstId":"estateUnit/getBuldListBySubEstId.do"
+        "getBuldListBySubEstId":"estateUnit/getBuldListBySubEstId.do",
+        "saveImageInfo":"estate/sub/image/saveImageInfo.do"
     },
     "unit": {
        "list": "estateUnit/pageUnitListBy.do",

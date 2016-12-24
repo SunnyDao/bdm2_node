@@ -92,24 +92,18 @@ class SubEstateImage{
         return await bdmService.request(this.options);
     }
 
-
     /**
-     *  buildingName	String	否	楼栋名称
-     *  estateId	    int	    是	小区id
-     *  file	        file	是	图片
-     *  imageMark	    String	否	当图片类型为楼层平面图时，保存楼栋名称选择项
-     *  subEstateId	    int	    是	子划分小区id
-     *  type            int	    是
-    */
-    async uploadPic({buildingName,estateId,file,imageMark,subEstateId,type}){
+     * 保存图片信息
+     */
+    async saveImageInfo({type,imageMark,estateId,subEstateId,imageKey,cookies}){
         //页面查询参数
         let opt_data = {
-            form: {//get请求
-                buildingName,
-                estateId,
-                file,
+            qs: {
+                type,
                 imageMark,
-                subEstateId,type
+                estateId,
+                subEstateId,
+                imageKey
             },
             cookies
         };
@@ -118,7 +112,7 @@ class SubEstateImage{
             data: opt_data,
             soaOpt: {
                 moduleName: this.name,
-                actionName: "deleteImg",
+                actionName: "saveImageInfo",
                 converter: false
             }
         }
