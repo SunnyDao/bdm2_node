@@ -46,10 +46,11 @@
         "buildingList": "estatebuild/list.do",
         "lock":"estatebuild/lock.do"
     },
-    "imageInfo":{
-        "getImgList":"imageInfo/getImgList.do",
-        "deleteImg":"imageInfo/deleteImg.do",
-        "getBuildingNameList":"imageInfo/getBuildingNameList.do"
+    "subEstateImage":{
+        "getImgList":"estate/sub/image/list.do",
+        "deleteImg":"estate/sub/image/delete.do",
+        "uploadPic":"estate/sub/image/uploadPic.do",
+        "getBuldListBySubEstId":"estateUnit/getBuldListBySubEstId.do"
     },
     "unit": {
        "list": "estateUnit/pageUnitListBy.do",

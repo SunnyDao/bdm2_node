@@ -8,7 +8,7 @@ import Logger from '../../utils/logger';
 import ModuleFactory from '../../core/factory';
 
 let router = express.Router();
-let imageInfoPxy = ModuleFactory.createProxy("imageInfo");
+let imageInfoPxy = ModuleFactory.createProxy("subEstateImage");
 
 /**
  * 获取全部图片
@@ -19,7 +19,7 @@ router.get("/getImgList", async (req, res, next) => {
         let result = await imageInfoPxy.getList(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subestate Api==>getList:' + e);
+        Logger.error('subEstateImage Api==>getList:' + e);
         next(e.api);
     }
 })
@@ -33,7 +33,7 @@ router.post("/deleteImg", async (req, res, next) => {
         let result = await imageInfoPxy.deleteImg(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subestate Api==>getList:' + e);
+        Logger.error('subEstateImage Api==>getList:' + e);
         next(e.api);
     }
 })
@@ -41,13 +41,26 @@ router.post("/deleteImg", async (req, res, next) => {
 /**
  * 获取楼栋名称列表
  */
-router.post("/getBuildingNameList", async (req, res, next) => {
+router.post("/getBuldListBySubEstId", async (req, res, next) => {
     try {
         //调用proxy获取数据
-        let result = await imageInfoPxy.getBuildingNameList(req.app.locals.SOAParams);
+        let result = await imageInfoPxy.getBuldListBySubEstId(req.app.locals.SOAParams);
         return res.json(result);
     } catch (e) {
-        Logger.error('subestate Api==>getList:' + e);
+        Logger.error('subEstateImage Api==>getList:' + e);
+        next(e.api);
+    }
+})
+
+/**
+ * 上传图片信息
+ */
+router.post("/uploadPic", async (req, res, next) => {
+    try {
+        let result = await imageInfoPxy.uploadPic(req.app.locals.SOAParams);
+        return res.json(result);
+    } catch (e) {
+        Logger.error('subEstateImage Api==>getList:' + e);
         next(e.api);
     }
 })
