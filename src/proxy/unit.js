@@ -151,10 +151,10 @@ class Unit {
      * @param  {Integer} type:单元类型（1.实体单元 2.虚拟单元）
      * @param  {} cookies}
      */
-    async setType({units, type, cookies}) {
+    async setType({unitTypeDetailList, type, cookies}) {
         let opt_data = {
             body: {
-                unitTypeDetailList: units,
+                unitTypeDetailList: unitTypeDetailList,
                 unitType:type
             },
             cookies

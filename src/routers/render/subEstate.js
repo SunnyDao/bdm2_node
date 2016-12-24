@@ -80,7 +80,7 @@ router.get("/details", function(req, res, next) {
 
     let templateData = routerUtil.getTemplateBasicData(param);
 
-    Object.assign(templateData, { "title": "小区子划分明细", "subEstateId": req.query.subEstateId });
+    Object.assign(templateData, { "title": "小区子划分明细", "subEstateId": req.query.subEstateId,"estateId":req.query.estateId });
 
     return res.render("subEstate/details", templateData);
 })
