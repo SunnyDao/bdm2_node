@@ -80,7 +80,7 @@ router.get("/details", function(req, res, next) {
 
     let templateData = routerUtil.getTemplateBasicData(param);
 
-    Object.assign(templateData, { "title": "小区子划分明细", "subEstateId": req.query.subEstateId });
+    Object.assign(templateData, { "title": "小区子划分明细", "subEstateId": req.query.subEstateId,"estateId":req.query.estateId });
 
     return res.render("subEstate/details", templateData);
 })
@@ -120,8 +120,16 @@ router.get('/imageUpload', (req, res, next) => {
 /**
  * 单元信息
  */
-router.get('/unitInfoView', (req, res, next) => {
-    return res.render('subEstate/_unitInfo', req);
+router.get('/unitInfoView',async (req, res, next) => {
+    try {
+        //根据子划分id,获取楼栋名称信息
+        let buindings=await subEstateRoomPxy.getBuildings(req.app.locals.SOAParams);
+        return res.render('subEstate/_unitInfo', buindings);
+    }
+    catch (e) {
+        logger.error('subEstate unitInfoView==>:' + e);
+        next(e.render);
+    }    
 });
 
 

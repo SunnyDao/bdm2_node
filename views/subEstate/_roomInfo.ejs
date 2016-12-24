@@ -6,11 +6,11 @@
             <dl>
                 <dt>楼栋名称 ：</dt>
                 <dd>
-                    <% if (data&&data.items&&data.items.length>1) { %>
+                    <% if (data&&data.length>0) { %>
                         <select name="" id="selBuilding" class="form-control">
                             <option value="0">请选择</option>
-                            <%for(var i=0;i<data.items.length;i++){%>
-                                <option value="<%=data.items[i].id%>" type="<%=data.items[i].type%>"><%=data.items[i].text%></option>
+                            <%for(var i=0;i<data.length;i++){%>
+                                <option value="<%=data[i].id%>" type="<%=data[i].type%>"><%=data[i].text%></option>
                             <%}%>
                         </select>
                     <%}else{%>

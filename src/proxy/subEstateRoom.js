@@ -23,15 +23,18 @@ class SubEstateRoom {
      * @param  {} pageSize
      * @param  {} cookies
      */
-    async getList({buildingId, unitId, room, page, pageSize, cookies}) {
+    async getList({id,buildingId, unitId, room, page, pageSize,sort,sortType, cookies}) {
         //页面查询参数
         let opt_data = {
-            form: {
+            body: {
+                id,
                 buildingId,
                 unitId,
                 room,
                 page,
-                pageSize
+                pageSize,
+                sort,
+                sortType
             },
             cookies
         };
@@ -56,7 +59,7 @@ class SubEstateRoom {
     async getBuildings({subEstateId, cookies}) {
         //页面查询参数
         let opt_data = {
-            form: {
+            body: {
                 subEstateId
             },
             cookies
@@ -67,7 +70,7 @@ class SubEstateRoom {
             soaOpt: {
                 moduleName: this.name,
                 actionName: "buildings",
-                method: "post"
+                method: "post"                
             }
         }
         return await bdmService.request(this.options);
