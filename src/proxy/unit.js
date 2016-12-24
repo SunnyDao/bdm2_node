@@ -24,9 +24,10 @@ class Unit {
      * @param  {Integer} pageSize
      * @param  {} cookies}
      */
-    async getList({buildingId, lockStatus, unitType, createStartDate, createEndDate, pageIndex, pageSize, cookies}) {
+    async getList({subEstateId,buildingId, lockStatus, unitType, createStartDate, createEndDate, pageIndex, pageSize, cookies}) {
         let opt_data = {
             body: {
+                subEstateId,
                 buildingId,
                 lockStatus,
                 unitType,
@@ -152,7 +153,7 @@ class Unit {
      */
     async setType({units, type, cookies}) {
         let opt_data = {
-            form: {
+            body: {
                 unitTypeDetailList: units,
                 unitType:type
             },
@@ -176,11 +177,11 @@ class Unit {
      * @param  {IntegerArray} {ids:小区id
      * @param  {} cookies}
      */
-    async setLockStatus({ids, status, cookies}) {
+    async setLockStatus({unitId, lockStatus, cookies}) {
         let opt_data = {
-            form: {
-                ids,
-                status
+            body: {
+                unitId, 
+                lockStatus
             },
             cookies
         };

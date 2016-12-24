@@ -12,7 +12,7 @@ let itemMap = {
     estateName: "estateName",
     buildingId: "buildingId",
     buildingName: "buildingName",
-    unitName: "unitName",
+    unitName: CommonMapper.nullableStr("unitName"),
     unitType: "unitType",
     unitTypeStr: "unitTypeStr",
     lockStatus: "lockStatus",
