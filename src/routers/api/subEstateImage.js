@@ -74,6 +74,10 @@ router.post("/saveImageInfo", async (req, res, next) => {
  */
 router.post("/fileUpload",multipartMiddleware,async (req, res, next) => {
     console.log(req.files);//获取上传的文件
+    //在删除临时文件
+    fs.unlink(req.files.myfile.path);
+
+    res.json({ fname: './file/'+req.files.myfile.originalFilename });//向客户端返回上传文件保存的地址
    /*
     var request = require('request');
     var fs = require('fs');
@@ -92,4 +96,5 @@ router.post("/fileUpload",multipartMiddleware,async (req, res, next) => {
         next(e.api);
     }*/
 })
+
 module.exports = router;
